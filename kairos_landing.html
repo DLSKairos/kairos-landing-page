@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Kairos — Software inteligente para empresas en Colombia</title>
+
+<!-- SEO básico -->
+<meta name="description" content="Kairos desarrolla software a medida, apps nativas y productos SaaS con inteligencia artificial integrada para empresas en Colombia. Automatizamos procesos, integramos sistemas y construimos tu transformación digital."/>
+<meta name="keywords" content="desarrollo de software Colombia, software a medida, inteligencia artificial empresas, automatización procesos, apps nativas, SaaS Colombia, Kairos DLS Group"/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://kairosdls.com/"/>
+
+<!-- Open Graph -->
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Kairos — Software inteligente para empresas en Colombia"/>
+<meta property="og:description" content="Desarrollamos software a medida, apps nativas y SaaS con IA integrada. Automatizamos lo que te roba tiempo."/>
+<meta property="og:url" content="https://kairosdls.com/"/>
+<meta property="og:image" content="https://kairosdls.com/og-image.png"/>
+<meta property="og:locale" content="es_CO"/>
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Kairos — Software inteligente para empresas en Colombia"/>
+<meta name="twitter:description" content="Software a medida, apps y SaaS con IA integrada. Colombia."/>
+<meta name="twitter:image" content="https://kairosdls.com/og-image.png"/>
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="logo3.png"/>
+<link rel="apple-touch-icon" href="logo3.png"/>
+
+<!-- JSON-LD Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareCompany",
+  "name": "Kairos — DLS Group SAS",
+  "url": "https://kairosdls.com",
+  "logo": "https://kairosdls.com/logo.png",
+  "description": "Empresa colombiana de desarrollo de software a medida, apps nativas y productos SaaS con inteligencia artificial integrada.",
+  "address": { "@type": "PostalAddress", "addressCountry": "CO" },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+573043660371",
+    "email": "dlskairos@gmail.com",
+    "contactType": "customer support",
+    "availableLanguage": "Spanish"
+  }
+}
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --night:  #0D1B2A;
+  --action: #1A6BCC;
+  --mid:    #5A7A96;
+  --ice:    #D8E4EE;
+  --white:  #FFFFFF;
+  --bg:     #F4F7FA;
+}
+html { scroll-behavior: smooth; color-scheme: light only !important; }
+body { font-family: 'Sora', sans-serif; background: var(--white) !important; color: var(--night); overflow-x: hidden; }
+a { text-decoration: none; color: inherit; }
+
+@keyframes fadeUp { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+@keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+.fu { animation: fadeUp 0.7s ease both; }
+.d1{animation-delay:0.1s} .d2{animation-delay:0.2s} .d3{animation-delay:0.3s} .d4{animation-delay:0.4s}
+
+/* NAV */
+nav {
+  position:fixed; top:0; left:0; right:0; z-index:100;
+  background:rgba(255,255,255,0.93); backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--ice);
+  height:64px; padding:0 48px;
+  display:flex; align-items:center; justify-content:space-between;
+}
+.nav-logo { display:flex; align-items:center; gap:14px; }
+.nav-name { font-size:19px; font-weight:500; letter-spacing:5px; color:var(--night); }
+.nav-links { display:flex; gap:32px; align-items:center; }
+.nav-links a { font-size:12px; font-weight:400; letter-spacing:1px; color:var(--mid); transition:color 0.2s; }
+.nav-links a:hover { color:var(--night); }
+.nav-cta {
+  background:var(--night); color:var(--white) !important;
+  padding:10px 22px; border-radius:8px;
+  font-size:12px; font-weight:500; letter-spacing:1px;
+  transition:all 0.2s;
+}
+.nav-cta:hover { background:var(--action); transform:translateY(-1px); }
+
+/* HERO */
+.hero {
+  min-height:100vh; padding:128px 48px 80px;
+  display:flex; align-items:center;
+  position:relative; overflow:hidden;
+}
+.hero-bg {
+  position:absolute; inset:0; z-index:0;
+  background-image:
+    linear-gradient(rgba(26,107,204,0.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(26,107,204,0.035) 1px,transparent 1px);
+  background-size:52px 52px;
+}
+.hero-glow {
+  position:absolute; top:-160px; right:-160px;
+  width:560px; height:560px; border-radius:50%;
+  background:radial-gradient(circle,rgba(26,107,204,0.09) 0%,transparent 70%);
+  z-index:0;
+}
+.hero-content { position:relative; z-index:1; max-width:780px; }
+.badge {
+  display:inline-flex; align-items:center; gap:8px;
+  border:1px solid rgba(26,107,204,0.25); border-radius:20px;
+  padding:6px 14px; background:rgba(26,107,204,0.06); margin-bottom:32px;
+}
+.badge-dot { width:6px; height:6px; border-radius:50%; background:var(--action); animation:pulse 2s infinite; }
+.badge span { font-size:10px; font-weight:500; letter-spacing:2.5px; color:var(--action); }
+h1 {
+  font-size:clamp(40px,5.5vw,70px); font-weight:600;
+  line-height:1.07; letter-spacing:-1px; color:var(--night); margin-bottom:24px;
+}
+h1 .ac { color:var(--action); }
+.hero-sub { font-size:18px; font-weight:300; line-height:1.75; color:var(--mid); max-width:560px; margin-bottom:40px; }
+.btns { display:flex; gap:14px; flex-wrap:wrap; }
+.btn-p {
+  background:var(--night); color:var(--white);
+  padding:15px 30px; border-radius:10px;
+  font-size:14px; font-weight:500; letter-spacing:0.5px;
+  display:inline-flex; align-items:center; gap:8px; transition:all 0.2s;
+}
+.btn-p:hover { background:var(--action); transform:translateY(-2px); box-shadow:0 8px 24px rgba(26,107,204,0.2); }
+.btn-s {
+  background:transparent; color:var(--night);
+  padding:15px 30px; border-radius:10px; border:1px solid var(--ice);
+  font-size:14px; font-weight:500; letter-spacing:0.5px;
+  display:inline-flex; align-items:center; gap:8px; transition:all 0.2s;
+}
+.btn-s:hover { border-color:var(--action); color:var(--action); transform:translateY(-2px); }
+.stats { display:flex; gap:52px; margin-top:64px; padding-top:40px; border-top:1px solid var(--ice); flex-wrap:wrap; }
+.stat-n { font-size:38px; font-weight:600; color:var(--night); line-height:1; }
+.stat-l { font-size:11px; color:var(--mid); letter-spacing:1.5px; margin-top:5px; }
+
+/* SECTIONS */
+section { padding:96px 48px; }
+.container { max-width:1100px; margin:0 auto; }
+.eyebrow { font-size:10px; font-weight:500; letter-spacing:3px; color:var(--action); margin-bottom:14px; }
+.sec-title { font-size:clamp(26px,3.5vw,42px); font-weight:600; line-height:1.15; color:var(--night); margin-bottom:14px; }
+.sec-sub { font-size:15px; font-weight:300; color:var(--mid); line-height:1.75; max-width:540px; }
+.sec-head { margin-bottom:52px; }
+
+/* SHIFT */
+.shift-section { background:var(--night); }
+.shift-inner { display:grid; grid-template-columns:1fr 64px 1fr; align-items:stretch; }
+.shift-col { padding:48px 44px; }
+.shift-divider { display:flex; align-items:center; justify-content:center; }
+.shift-circle {
+  width:48px; height:48px; border-radius:50%;
+  background:var(--action); display:flex; align-items:center; justify-content:center;
+  animation:float 3s ease-in-out infinite; flex-shrink:0;
+}
+.shift-lbl { font-size:10px; font-weight:500; letter-spacing:3px; margin-bottom:24px; padding-bottom:14px; }
+.shift-lbl.b { color:rgba(255,255,255,0.3); border-bottom:1px solid rgba(255,255,255,0.07); }
+.shift-lbl.a { color:var(--action); border-bottom:1px solid rgba(26,107,204,0.25); }
+.si { display:flex; align-items:flex-start; gap:12px; margin-bottom:18px; }
+.si-dot { width:5px; height:5px; border-radius:50%; margin-top:8px; flex-shrink:0; }
+.si p { font-size:14px; line-height:1.65; }
+
+/* SERVICES */
+.srv-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:18px; }
+.srv-card {
+  background:var(--white); border:1px solid var(--ice); border-radius:14px; padding:28px;
+  position:relative; overflow:hidden; transition:all 0.3s;
+}
+.srv-card::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:2px;
+  background:var(--action); transform:scaleX(0); transform-origin:left; transition:transform 0.3s;
+}
+.srv-card:hover { transform:translateY(-4px); box-shadow:0 14px 36px rgba(13,27,42,0.08); border-color:rgba(26,107,204,0.2); }
+.srv-card:hover::before { transform:scaleX(1); }
+.srv-ico { font-size:26px; margin-bottom:18px; }
+.srv-name { font-size:16px; font-weight:500; color:var(--night); margin-bottom:8px; }
+.srv-desc { font-size:13px; color:var(--mid); line-height:1.7; }
+.srv-tag {
+  display:inline-flex; margin-top:14px;
+  border:1px solid rgba(26,107,204,0.2); border-radius:4px;
+  padding:3px 9px; background:rgba(26,107,204,0.06);
+  font-size:9px; font-weight:500; letter-spacing:2px; color:var(--action);
+}
+
+/* SAAS */
+.saas-section { background:var(--bg); }
+.saas-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:18px; }
+.saas-card { background:var(--white); border:1px solid var(--ice); border-radius:14px; padding:30px; transition:all 0.3s; }
+.saas-card:hover { transform:translateY(-4px); box-shadow:0 14px 36px rgba(13,27,42,0.08); }
+.saas-head { display:flex; align-items:center; justify-content:space-between; margin-bottom:16px; }
+.saas-badge { font-size:9px; font-weight:500; letter-spacing:2px; padding:4px 10px; border-radius:4px; }
+.saas-badge.dev { background:rgba(26,107,204,0.08); color:var(--action); }
+.saas-name { font-size:21px; font-weight:600; color:var(--night); margin-bottom:8px; }
+.saas-desc { font-size:13px; color:var(--mid); line-height:1.7; margin-bottom:18px; }
+.saas-feats { list-style:none; display:flex; flex-direction:column; gap:7px; }
+.saas-feats li { font-size:12px; color:var(--mid); display:flex; align-items:center; gap:8px; }
+.saas-feats li::before { content:''; width:4px; height:4px; border-radius:50%; background:var(--action); flex-shrink:0; }
+
+/* PROJECTS */
+.proj-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:18px; }
+.proj-card { border-radius:14px; padding:32px; border:1px solid var(--ice); background:var(--white); transition:all 0.3s; }
+.proj-card:hover { transform:translateY(-4px); box-shadow:0 14px 36px rgba(13,27,42,0.08); }
+.proj-sector { font-size:10px; font-weight:500; letter-spacing:2px; color:var(--action); margin-bottom:10px; }
+.proj-name { font-size:22px; font-weight:600; color:var(--night); margin-bottom:8px; }
+.proj-desc { font-size:13px; color:var(--mid); line-height:1.7; margin-bottom:18px; }
+.proj-tech { display:flex; flex-wrap:wrap; gap:7px; }
+.tech { font-size:10px; font-weight:500; letter-spacing:1px; padding:4px 10px; border-radius:4px; background:var(--bg); color:var(--mid); border:1px solid var(--ice); }
+
+/* IA */
+.ia-section { background:var(--night); }
+.ia-grid { display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:center; }
+.ia-feats { display:flex; flex-direction:column; gap:20px; margin-top:36px; }
+.ia-feat { display:flex; gap:14px; align-items:flex-start; }
+.ia-feat-ico {
+  width:40px; height:40px; border-radius:10px; flex-shrink:0;
+  background:rgba(26,107,204,0.12); border:1px solid rgba(26,107,204,0.18);
+  display:flex; align-items:center; justify-content:center; font-size:18px;
+}
+.ia-feat-t { font-size:15px; font-weight:500; color:var(--white); margin-bottom:3px; }
+.ia-feat-d { font-size:13px; color:rgba(255,255,255,0.38); line-height:1.6; }
+.ia-visual {
+  background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06);
+  border-radius:18px; padding:32px; display:flex; flex-direction:column; gap:14px;
+}
+.ia-row { display:flex; align-items:center; justify-content:space-between; padding:14px 18px; background:rgba(255,255,255,0.04); border-radius:10px; border:1px solid rgba(255,255,255,0.05); }
+.ia-row-l { font-size:12px; color:rgba(255,255,255,0.38); }
+.ia-row-r { text-align:right; }
+.ia-val { font-size:22px; font-weight:600; color:var(--white); line-height:1; }
+.ia-delta { font-size:10px; font-weight:500; color:#10B981; letter-spacing:0.5px; }
+
+/* CONTACTO */
+.contact-section { background:var(--bg); }
+.contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:start; }
+.channels { display:flex; flex-direction:column; gap:14px; margin-top:32px; }
+.ch {
+  display:flex; align-items:center; gap:16px;
+  padding:18px 22px; border-radius:12px;
+  border:1px solid var(--ice); background:var(--white);
+  transition:all 0.2s; cursor:pointer;
+}
+.ch:hover { border-color:var(--action); transform:translateX(4px); }
+.ch-ico { font-size:22px; }
+.ch-lbl { font-size:10px; font-weight:500; letter-spacing:2px; color:var(--mid); }
+.ch-val { font-size:14px; font-weight:500; color:var(--night); margin-top:2px; }
+.form { display:flex; flex-direction:column; gap:14px; }
+.form-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.fg { display:flex; flex-direction:column; gap:7px; }
+.fl { font-size:10px; font-weight:500; letter-spacing:1.5px; color:var(--mid); }
+.fi {
+  padding:13px 15px; border-radius:10px;
+  border:1px solid var(--ice); background:var(--white);
+  font-family:'Sora',sans-serif; font-size:14px; color:var(--night);
+  transition:border-color 0.2s; outline:none;
+}
+.fi:focus { border-color:var(--action); }
+.fi::placeholder { color:var(--ice); }
+textarea.fi { resize:vertical; min-height:110px; }
+.fsub {
+  background:var(--night); color:var(--white);
+  padding:15px; border-radius:10px; border:none; cursor:pointer;
+  font-family:'Sora',sans-serif; font-size:14px; font-weight:500;
+  display:flex; align-items:center; justify-content:center; gap:8px;
+  transition:all 0.2s;
+}
+.fsub:hover { background:var(--action); transform:translateY(-2px); }
+
+/* FOOTER */
+footer {
+  background:var(--night); padding:44px 48px;
+  display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:20px;
+}
+.fl-logo { display:flex; align-items:center; gap:12px; }
+.fl-name { font-size:15px; font-weight:500; letter-spacing:5px; color:var(--white); }
+.fl-copy { font-size:11px; color:rgba(255,255,255,0.28); letter-spacing:0.5px; }
+.fl-links { display:flex; gap:24px; }
+.fl-links a { font-size:11px; color:rgba(255,255,255,0.28); letter-spacing:1px; transition:color 0.2s; }
+.fl-links a:hover { color:var(--white); }
+
+@media(max-width:768px){
+  nav{padding:0 20px;} .nav-links{display:none;}
+  section{padding:64px 20px;} .hero{padding:100px 20px 56px;}
+  .shift-inner{grid-template-columns:1fr;} .shift-divider{display:none;}
+  .ia-grid{grid-template-columns:1fr; gap:40px;}
+  .contact-grid{grid-template-columns:1fr; gap:40px;}
+  .form-row{grid-template-columns:1fr;}
+  footer{flex-direction:column; text-align:center; padding:36px 20px;}
+  .stats{gap:28px;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <img src="logo.png" alt="Kairos" height="42"/>
+  </div>
+  <div class="nav-links">
+    <a href="#servicios">Servicios</a>
+    <a href="#productos">Productos</a>
+    <a href="#proyectos">Proyectos</a>
+    <a href="#ia">IA</a>
+    <a href="#contacto" class="nav-cta">Hablemos</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-content">
+    <div class="badge fu">
+      <div class="badge-dot"></div>
+      <span>SOFTWARE INTELIGENTE · COLOMBIA</span>
+    </div>
+    <h1 class="fu d1">
+      El momento en que<br/>
+      tu empresa <span class="ac">cambia</span><br/>
+      empieza aquí.
+    </h1>
+    <p class="hero-sub fu d2">
+      Desarrollamos software a medida, apps nativas y productos SaaS con inteligencia artificial integrada. Automatizamos lo repetitivo para que tu equipo se enfoque en lo que importa.
+    </p>
+    <div class="btns fu d3">
+      <a href="https://calendly.com/dlskairos/30min" target="_blank" rel="noopener" class="btn-p">
+        Agenda una llamada
+        <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="#proyectos" class="btn-s">
+        Ver proyectos
+        <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+    <div class="stats fu d4">
+      <div><div class="stat-n">+4</div><div class="stat-l">PROYECTOS ENTREGADOS</div></div>
+      <div><div class="stat-n">100%</div><div class="stat-l">IA INTEGRADA</div></div>
+      <div><div class="stat-n">4</div><div class="stat-l">PRODUCTOS SAAS</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ANTES / DESPUÉS -->
+<section class="shift-section">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:44px;">
+      <div class="eyebrow" style="color:rgba(26,107,204,0.65);">LA PROMESA KAIROS</div>
+      <h2 class="sec-title" style="color:var(--white);">Antes y después de trabajar con nosotros</h2>
+    </div>
+    <div class="shift-inner">
+      <div class="shift-col">
+        <div class="shift-lbl b">ANTES</div>
+        <div class="si"><div class="si-dot" style="background:rgba(255,255,255,0.18)"></div><p style="color:rgba(255,255,255,0.35)">Procesos manuales que consumen horas de tu equipo</p></div>
+        <div class="si"><div class="si-dot" style="background:rgba(255,255,255,0.18)"></div><p style="color:rgba(255,255,255,0.35)">Errores humanos con costos ocultos</p></div>
+        <div class="si"><div class="si-dot" style="background:rgba(255,255,255,0.18)"></div><p style="color:rgba(255,255,255,0.35)">Decisiones sin datos en tiempo real</p></div>
+        <div class="si"><div class="si-dot" style="background:rgba(255,255,255,0.18)"></div><p style="color:rgba(255,255,255,0.35)">Sistemas que no se hablan entre sí</p></div>
+        <div class="si"><div class="si-dot" style="background:rgba(255,255,255,0.18)"></div><p style="color:rgba(255,255,255,0.35)">Dependencia de personas clave para tareas básicas</p></div>
+      </div>
+      <div class="shift-divider">
+        <div class="shift-circle">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10h12M12 5l5 5-5 5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </div>
+      <div class="shift-col">
+        <div class="shift-lbl a">DESPUÉS</div>
+        <div class="si"><div class="si-dot" style="background:var(--action)"></div><p style="color:var(--white)">Software que automatiza y libera tu equipo</p></div>
+        <div class="si"><div class="si-dot" style="background:var(--action)"></div><p style="color:var(--white)">Precisión y consistencia garantizada por IA</p></div>
+        <div class="si"><div class="si-dot" style="background:var(--action)"></div><p style="color:var(--white)">Visibilidad total con dashboards inteligentes</p></div>
+        <div class="si"><div class="si-dot" style="background:var(--action)"></div><p style="color:var(--white)">Integración completa entre todas tus herramientas</p></div>
+        <div class="si"><div class="si-dot" style="background:var(--action)"></div><p style="color:var(--action)">Libertad para crecer sin límites operativos</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IA SECTION -->
+<section style="background:var(--night); padding:80px 48px;">
+  <div class="container">
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center;">
+      <div>
+        <div class="eyebrow" style="color:var(--action);">INTELIGENCIA ARTIFICIAL</div>
+        <h2 class="sec-title" style="color:var(--white); margin-bottom:16px;">Una IA especializada<br/>para cada solución.</h2>
+        <p style="font-size:15px; font-weight:300; color:rgba(255,255,255,0.5); line-height:1.8; margin-bottom:24px;">Cada software y app que construimos en Kairos incluye una inteligencia artificial entrenada y personalizada únicamente para ese caso de uso — no una IA genérica adaptada, sino un cerebro digital diseñado desde cero para entender tu operación, tu industria y tus datos.</p>
+        <p style="font-size:15px; font-weight:300; color:rgba(255,255,255,0.5); line-height:1.8; margin-bottom:32px;">La IA aprende de tu negocio, habla el lenguaje de tu equipo y toma decisiones contextualizadas — no respuestas de plantilla. Cada Kairos IA es única, igual que el problema que resuelve.</p>
+        <div style="display:inline-flex; align-items:center; gap:12px; background:rgba(26,107,204,0.1); border:1px solid rgba(26,107,204,0.25); border-radius:8px; padding:12px 20px;">
+          <div>
+            <div style="font-size:13px; font-weight:600; color:var(--white); letter-spacing:1px;">Powered by Anthropic</div>
+            <div style="font-size:11px; color:var(--mid); margin-top:2px;">El mismo motor de IA usado por empresas Fortune 500</div>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:14px;">
+        <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.07); border-radius:12px; padding:20px 24px;">
+          <div style="font-size:13px; font-weight:600; color:var(--white); margin-bottom:4px;">IA contextualizada</div>
+          <div style="font-size:12px; color:rgba(255,255,255,0.4); line-height:1.6;">Cada IA conoce tu industria, tu vocabulario y tus procesos. No hay respuestas genéricas.</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.07); border-radius:12px; padding:20px 24px;">
+          <div style="font-size:13px; font-weight:600; color:var(--white); margin-bottom:4px;">Aprende con tu operación</div>
+          <div style="font-size:12px; color:rgba(255,255,255,0.4); line-height:1.6;">Cuanto más la usas, más precisa se vuelve. Tu IA mejora contigo.</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.07); border-radius:12px; padding:20px 24px;">
+          <div style="font-size:13px; font-weight:600; color:var(--white); margin-bottom:4px;">Decisiones, no sugerencias</div>
+          <div style="font-size:12px; color:rgba(255,255,255,0.4); line-height:1.6;">Analiza, procesa y actúa — no solo informa. La IA trabaja, tú decides.</div>
+        </div>
+        <div style="background:rgba(26,107,204,0.08); border:1px solid rgba(26,107,204,0.2); border-radius:12px; padding:20px 24px;">
+          <div style="font-size:13px; font-weight:600; color:var(--action); margin-bottom:4px;">Powered by Anthropic · Claude</div>
+          <div style="font-size:12px; color:rgba(255,255,255,0.4); line-height:1.6;">Usamos la tecnología de Anthropic — el mismo motor de IA que impulsa a empresas Fortune 500 alrededor del mundo. Estado del arte en IA responsable y de alto rendimiento.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section id="servicios">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow">SERVICIOS</div>
+      <h2 class="sec-title">Lo que construimos para ti</h2>
+      <p class="sec-sub">Cada solución lleva IA integrada desde el núcleo — no como un add-on, sino como parte del sistema.</p>
+    </div>
+    <div class="srv-grid">
+      <div class="srv-card"><div class="srv-ico">⚙️</div><div class="srv-name">Software a medida</div><div class="srv-desc">Sistemas diseñados exactamente para tu operación. Desde el modelo de datos hasta la interfaz final.</div><div class="srv-tag">IA INTEGRADA</div></div>
+      <div class="srv-card"><div class="srv-ico">🔄</div><div class="srv-name">Automatización de procesos</div><div class="srv-desc">Convertimos lo que te roba tiempo en flujos automáticos que trabajan por ti 24/7.</div><div class="srv-tag">IA INTEGRADA</div></div>
+      <div class="srv-card"><div class="srv-ico">📱</div><div class="srv-name">Apps nativas y PWA</div><div class="srv-desc">Aplicaciones móviles nativas para iOS y Android, y Progressive Web Apps offline-first.</div><div class="srv-tag">IA INTEGRADA</div></div>
+      <div class="srv-card"><div class="srv-ico">🔗</div><div class="srv-name">Integración de sistemas</div><div class="srv-desc">Conectamos tus herramientas — ERP, CRM, APIs — para que toda tu data fluya sin fricción.</div><div class="srv-tag">IA INTEGRADA</div></div>
+      <div class="srv-card"><div class="srv-ico">🌐</div><div class="srv-name">Plataformas web</div><div class="srv-desc">Portales, dashboards y plataformas de alto rendimiento con tecnología moderna y escalable.</div><div class="srv-tag">IA INTEGRADA</div></div>
+      <div class="srv-card"><div class="srv-ico">🧠</div><div class="srv-name">Consultoría tecnológica</div><div class="srv-desc">Definimos contigo la arquitectura correcta antes de escribir una sola línea de código.</div><div class="srv-tag">ESTRATEGIA</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SAAS -->
+<section id="productos" class="saas-section">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow">PRODUCTOS SAAS</div>
+      <h2 class="sec-title">Nuestras plataformas propias</h2>
+      <p class="sec-sub">Software desarrollado bajo Kairos, listo para usar o personalizar para tu industria.</p>
+    </div>
+    <div class="saas-grid">
+      <div class="saas-card">
+        <div class="saas-head"><div style="font-size:28px">💪</div><div class="saas-badge dev">EN DESARROLLO</div></div>
+        <div class="saas-name">PILA</div>
+        <div class="saas-desc">Plataforma inteligente para entrenadores personales y gimnasios. Gestiona clientes, planes de entrenamiento, nutrición y progreso con IA personalizada por atleta.</div>
+        <ul class="saas-feats">
+          <li>Planes personalizados con IA</li>
+          <li>Seguimiento de progreso y métricas</li>
+          <li>App móvil nativa para miembros</li>
+          <li>Panel de control para entrenadores</li>
+        </ul>
+        <div style="margin-top:16px; font-size:11px; font-weight:500; letter-spacing:1px; color:var(--action); font-style:italic;">El gym en tu bolsillo.</div>
+        <div style="margin-top:8px; display:flex; align-items:center; gap:6px;"><span style="font-size:11px; font-weight:600; color:var(--night);">PILA IA</span><span style="font-size:9px; color:var(--mid); font-weight:400;">powered by Anthropic</span></div>
+      </div>
+      <div class="saas-card">
+        <div class="saas-head"><div style="font-size:28px">🍽️</div><div class="saas-badge dev">EN DESARROLLO</div></div>
+        <div class="saas-name">Parce</div>
+        <div class="saas-desc">App inteligente para restaurantes. Gestiona pedidos, mesas, menú digital, domicilios y fidelización de clientes, todo en una sola plataforma con IA integrada.</div>
+        <ul class="saas-feats">
+          <li>Menú digital con QR</li>
+          <li>Gestión de pedidos en tiempo real</li>
+          <li>Domicilios y fidelización</li>
+          <li>Analítica del negocio con IA</li>
+        </ul>
+        <div style="margin-top:16px; font-size:11px; font-weight:500; letter-spacing:1px; color:var(--action); font-style:italic;">Tu Parce en el negocio.</div>
+        <div style="margin-top:8px; display:flex; align-items:center; gap:6px;"><span style="font-size:11px; font-weight:600; color:var(--night);">Parce IA</span><span style="font-size:9px; color:var(--mid); font-weight:400;">powered by Anthropic</span></div>
+      </div>
+      <div class="saas-card">
+        <div class="saas-head"><div style="font-size:28px">📋</div><div class="saas-badge dev">EN DESARROLLO</div></div>
+        <div class="saas-name">Gestor SST</div>
+        <div class="saas-desc">Sistema de Seguridad y Salud en el Trabajo con gestión documental, flujos automatizados, cumplimiento normativo SG-SST y asistente inteligente integrado.</div>
+        <ul class="saas-feats">
+          <li>Cumplimiento SG-SST automatizado</li>
+          <li>Gestión documental con IA</li>
+          <li>Flujos de aprobación digitales</li>
+          <li>Reportes e indicadores en tiempo real</li>
+        </ul>
+        <div style="margin-top:16px; font-size:11px; font-weight:500; letter-spacing:1px; color:var(--action); font-style:italic;">Tu operacion SST, sin papel.</div>
+        <div style="margin-top:8px; display:flex; align-items:center; gap:6px;"><span style="font-size:11px; font-weight:600; color:var(--night);">Gestor IA</span><span style="font-size:9px; color:var(--mid); font-weight:400;">powered by Anthropic</span></div>
+      </div>
+      <div class="saas-card">
+        <div class="saas-head"><div style="font-size:28px">🏠</div><div class="saas-badge dev">EN DESARROLLO</div></div>
+        <div class="saas-name">Llave</div>
+        <div class="saas-desc">PWA colombiana que digitaliza la relacion entre arrendadores e inquilinos. Contratos, inventarios, pagos y evidencia legal — sin WhatsApp, sin papel, sin drama.</div>
+        <ul class="saas-feats">
+          <li>Contratos digitales con validez legal</li>
+          <li>Gestion de pagos y servicios</li>
+          <li>Inventarios fotograficos digitales</li>
+          <li>IA para decisiones del arrendador</li>
+        </ul>
+        <div style="margin-top:16px; font-size:11px; font-weight:500; letter-spacing:1px; color:var(--action); font-style:italic;">Llave en mano, arriendo en paz.</div>
+        <div style="margin-top:8px; display:flex; align-items:center; gap:6px;">
+          <span style="font-size:11px; font-weight:600; color:var(--night);">Llave IA</span>
+          <span style="font-size:9px; color:var(--mid); font-weight:400;">powered by Anthropic</span>
+        </div>
+      </div>
+      <div class="saas-card">
+        <div class="saas-head"><div style="font-size:28px">📡</div><div class="saas-badge dev">EN DESARROLLO</div></div>
+        <div class="saas-name">SEÑAL</div>
+        <div class="saas-desc">SaaS de permisos de trabajo y formularios operativos que se personaliza totalmente a la medida de cada empresa — permisos, visual, flujos y marca propia. Cuando la contratas, deja de llamarse SEÑAL y se convierte en tu app.</div>
+        <ul class="saas-feats">
+          <li>Permisos y formularios 100% a tu medida</li>
+          <li>Tu marca, tus colores, tu identidad</li>
+          <li>Firma digital y trazabilidad total</li>
+          <li>IA que detecta riesgos antes de aprobar</li>
+          <li>Alertas y flujos completamente personalizados</li>
+        </ul>
+        <div style="margin-top:16px; font-size:11px; font-weight:500; letter-spacing:1px; color:var(--action); font-style:italic;">Tu operacion en movimiento, siempre.</div>
+        <div style="margin-top:8px; display:flex; align-items:center; gap:6px;">
+          <span style="font-size:11px; font-weight:600; color:var(--night);">SEÑAL IA</span>
+          <span style="font-size:9px; color:var(--mid); font-weight:400;">powered by Anthropic</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPACTO LA CENTRAL -->
+<section style="background:var(--night); padding:80px 24px;">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow" style="color:var(--action);">IMPACTO REAL</div>
+      <h2 class="sec-title" style="color:var(--white);">Lo que cambió con La Central</h2>
+      <p class="sec-sub" style="color:rgba(255,255,255,0.4);">De formularios en papel a trazabilidad digital.</p>
+    </div>
+    <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.07); border-radius:16px; padding:24px 16px 20px; overflow:hidden;">
+
+      <!-- SVG gráfico full-width, aspect ratio fijo -->
+      <svg width="100%" viewBox="0 0 700 300" preserveAspectRatio="xMidYMid meet" style="display:block; overflow:visible;">
+        <defs>
+          <linearGradient id="gradUp" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#1A6BCC" stop-opacity="0.35"/>
+            <stop offset="100%" stop-color="#1A6BCC" stop-opacity="0"/>
+          </linearGradient>
+          <linearGradient id="gradDown" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#EF4444" stop-opacity="0"/>
+            <stop offset="100%" stop-color="#EF4444" stop-opacity="0.25"/>
+          </linearGradient>
+        </defs>
+
+        <!-- Líneas guía horizontales -->
+        <line x1="56" y1="20" x2="690" y2="20" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+        <line x1="56" y1="82" x2="690" y2="82" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+        <line x1="56" y1="144" x2="690" y2="144" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+        <line x1="56" y1="206" x2="690" y2="206" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+        <line x1="56" y1="260" x2="690" y2="260" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+
+        <!-- Labels eje Y -->
+        <text x="48" y="24" text-anchor="end" font-size="11" fill="rgba(255,255,255,0.25)" font-family="Sora,sans-serif">100%</text>
+        <text x="48" y="86" text-anchor="end" font-size="11" fill="rgba(255,255,255,0.25)" font-family="Sora,sans-serif">75%</text>
+        <text x="48" y="148" text-anchor="end" font-size="11" fill="rgba(255,255,255,0.25)" font-family="Sora,sans-serif">50%</text>
+        <text x="48" y="210" text-anchor="end" font-size="11" fill="rgba(255,255,255,0.25)" font-family="Sora,sans-serif">25%</text>
+        <text x="48" y="264" text-anchor="end" font-size="11" fill="rgba(255,255,255,0.25)" font-family="Sora,sans-serif">0%</text>
+
+        <!-- Líneas verticales de referencia -->
+        <line x1="280" y1="20" x2="280" y2="260" stroke="rgba(255,255,255,0.08)" stroke-width="1" stroke-dasharray="4,4"/>
+        <line x1="450" y1="20" x2="450" y2="260" stroke="#1A6BCC" stroke-width="1" stroke-dasharray="4,4" opacity="0.4"/>
+
+        <!-- ÁREA ROJA -->
+        <path d="M60,25 C120,26 180,28 240,35 C300,42 340,60 380,120 C410,170 440,230 500,248 C560,258 620,261 690,262 L690,260 L60,260 Z"
+          fill="url(#gradDown)"/>
+        <!-- LÍNEA ROJA -->
+        <path d="M60,25 C120,26 180,28 240,35 C300,42 340,60 380,120 C410,170 440,230 500,248 C560,258 620,261 690,262"
+          fill="none" stroke="#EF4444" stroke-width="2.5" stroke-linecap="round" opacity="0.8"/>
+
+        <!-- ÁREA AZUL -->
+        <path d="M60,248 C120,244 180,238 240,228 C300,215 340,195 380,155 C410,120 440,72 500,42 C560,20 620,14 690,12 L690,260 L60,260 Z"
+          fill="url(#gradUp)"/>
+        <!-- LÍNEA AZUL -->
+        <path d="M60,248 C120,244 180,238 240,228 C300,215 340,195 380,155 C410,120 440,72 500,42 C560,20 620,14 690,12"
+          fill="none" stroke="#1A6BCC" stroke-width="2.5" stroke-linecap="round"/>
+
+        <!-- Puntos de inflexión -->
+        <circle cx="450" cy="72" r="5" fill="#1A6BCC"/>
+        <circle cx="450" cy="72" r="10" fill="#1A6BCC" opacity="0.15"/>
+        <circle cx="450" cy="230" r="5" fill="#EF4444"/>
+        <circle cx="450" cy="230" r="10" fill="#EF4444" opacity="0.15"/>
+
+        <!-- Labels eje X -->
+        <text x="100" y="282" text-anchor="middle" font-size="10" fill="rgba(255,255,255,0.25)" font-family="Sora,sans-serif" letter-spacing="1">ANTES</text>
+        <text x="350" y="282" text-anchor="middle" font-size="10" fill="rgba(255,255,255,0.4)" font-family="Sora,sans-serif" letter-spacing="1">IMPLEMENTACIÓN</text>
+        <text x="590" y="282" text-anchor="middle" font-size="10" fill="#1A6BCC" font-family="Sora,sans-serif" font-weight="500" letter-spacing="1">CON KAIROS</text>
+      </svg>
+
+      <!-- Leyenda y métricas -->
+      <div style="display:flex; flex-wrap:wrap; gap:16px; align-items:center; margin-top:16px; padding-top:16px; border-top:1px solid rgba(255,255,255,0.06);">
+        <div style="display:flex; align-items:center; gap:8px;">
+          <div style="width:20px; height:2px; background:#1A6BCC; border-radius:2px; flex-shrink:0;"></div>
+          <span style="font-size:11px; color:rgba(255,255,255,0.5);">Productividad</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:8px;">
+          <div style="width:20px; height:2px; background:#EF4444; border-radius:2px; flex-shrink:0; opacity:0.8;"></div>
+          <span style="font-size:11px; color:rgba(255,255,255,0.5);">Tiempo manual</span>
+        </div>
+        <div style="margin-left:auto; display:flex; gap:20px;">
+          <div style="text-align:center;">
+            <div style="font-size:20px; font-weight:600; color:#1A6BCC; line-height:1;">+700h</div>
+            <div style="font-size:9px; color:rgba(255,255,255,0.25); letter-spacing:1px; margin-top:2px;">AHORRADAS/MES</div>
+          </div>
+          <div style="text-align:center;">
+            <div style="font-size:20px; font-weight:600; color:#EF4444; line-height:1;">-85%</div>
+            <div style="font-size:9px; color:rgba(255,255,255,0.25); letter-spacing:1px; margin-top:2px;">TIEMPO MANUAL</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROYECTOS -->
+<section id="proyectos">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow">PROYECTOS</div>
+      <h2 class="sec-title">Casos de éxito reales</h2>
+      <p class="sec-sub">Empresas que ya viven el antes y el después de Kairos.</p>
+    </div>
+    <div class="proj-grid">
+      <div class="proj-card">
+        <div class="proj-sector">CONSTRUCCIÓN · MAQUINARIA PESADA · SST</div>
+        <div class="proj-name">La Central</div>
+        <div class="proj-desc">PWA desarrollada para GyE SAS que digitaliza y automatiza todos los formatos SST de operarios y administradores de torres grúas, bombas de concreto y maquinaria pesada. Control de horas extras y formularios operativos en tiempo real.</div>
+        <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:10px; margin:16px 0;">
+          <div style="text-align:center; padding:12px 8px; background:var(--bg); border-radius:8px;">
+            <div style="font-size:17px; font-weight:600; color:var(--night);">+15</div>
+            <div style="font-size:10px; color:var(--mid); letter-spacing:1px; margin-top:2px;">FORMULARIOS</div>
+          </div>
+          <div style="text-align:center; padding:12px 8px; background:var(--bg); border-radius:8px;">
+            <div style="font-size:17px; font-weight:600; color:var(--night);">110</div>
+            <div style="font-size:10px; color:var(--mid); letter-spacing:1px; margin-top:2px;">OPERARIOS</div>
+          </div>
+          <div style="text-align:center; padding:12px 8px; background:var(--bg); border-radius:8px;">
+            <div style="font-size:17px; font-weight:600; color:var(--night);">+700h</div>
+            <div style="font-size:10px; color:var(--mid); letter-spacing:1px; margin-top:2px;">AHORRADAS/MES</div>
+          </div>
+          <div style="text-align:center; padding:12px 8px; background:var(--bg); border-radius:8px;">
+            <div style="font-size:17px; font-weight:600; color:var(--action);">0</div>
+            <div style="font-size:10px; color:var(--mid); letter-spacing:1px; margin-top:2px;">PAPEL</div>
+          </div>
+        </div>
+        <div style="font-size:11px; font-weight:500; color:var(--action); letter-spacing:1px; margin-bottom:12px;">0 papel · 0 esfero · 100% trazable</div>
+        <div class="proj-tech"><span class="tech">React</span><span class="tech">Node.js</span><span class="tech">PostgreSQL</span><span class="tech">PWA</span><span class="tech">SST</span></div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-sector">SECTOR SOCIAL · FUNDACIÓN</div>
+        <div class="proj-name">FUNAC</div>
+        <div class="proj-desc">Plataforma para fundación sin ánimo de lucro. Donaciones con ePayco, registro de voluntarios, CMS administrativo y reportes de impacto social.</div>
+        <div class="proj-tech"><span class="tech">React</span><span class="tech">Express</span><span class="tech">ePayco</span><span class="tech">PostgreSQL</span></div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-sector">SECTOR JURÍDICO</div>
+        <div class="proj-name">Carvajal y Carvajal</div>
+        <div class="proj-desc">Plataforma para firma de abogados litigantes. Gestión de casos, clientes y documentos con seguimiento de procesos judiciales y alertas automáticas.</div>
+        <div class="proj-tech"><span class="tech">React</span><span class="tech">NestJS</span><span class="tech">PostgreSQL</span></div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-sector">SECTOR SOCIAL · ONG</div>
+        <div class="proj-name">Becata</div>
+        <div class="proj-desc">Aplicación web para gestión de becas y beneficiarios. Selección automatizada, seguimiento académico y reportes para financiadores.</div>
+        <div class="proj-tech"><span class="tech">React</span><span class="tech">Node.js</span><span class="tech">PostgreSQL</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IA -->
+<!-- CONTACTO -->
+<section id="contacto" class="contact-section">
+  <div class="container">
+    <div class="contact-grid">
+      <div>
+        <div class="eyebrow">CONTACTO</div>
+        <h2 class="sec-title">¿Listo para tu momento Kairos?</h2>
+        <p class="sec-sub">Cuéntanos tu reto. En menos de 24 horas te respondemos con un diagnóstico inicial sin costo.</p>
+        <div class="channels">
+          <a href="https://wa.me/573043660371" class="ch">
+            <div class="ch-ico">💬</div>
+            <div><div class="ch-lbl">WHATSAPP</div><div class="ch-val">+57 304 366 0371</div></div>
+          </a>
+          <a href="mailto:dlskairos@gmail.com" class="ch">
+            <div class="ch-ico">✉️</div>
+            <div><div class="ch-lbl">EMAIL</div><div class="ch-val">dlskairos@gmail.com</div></div>
+          </a>
+          <a href="https://calendly.com/dlskairos/30min" target="_blank" rel="noopener" class="ch">
+            <div class="ch-ico">📅</div>
+            <div><div class="ch-lbl">VIDEOLLAMADA</div><div class="ch-val">Agenda 30 minutos</div></div>
+          </a>
+        </div>
+      </div>
+      <form class="form" id="contact-form" action="https://formspree.io/f/xzdkodod" method="POST">
+        <div class="form-row">
+          <div class="fg"><label class="fl">NOMBRE</label><input type="text" name="nombre" class="fi" placeholder="Tu nombre" required/></div>
+          <div class="fg"><label class="fl">EMPRESA</label><input type="text" name="empresa" class="fi" placeholder="Tu empresa"/></div>
+        </div>
+        <div class="fg"><label class="fl">EMAIL</label><input type="email" name="email" class="fi" placeholder="tu@empresa.com" required/></div>
+        <div class="fg"><label class="fl">¿CUÁL ES TU RETO?</label><textarea name="mensaje" class="fi" placeholder="Cuéntanos qué proceso quieres automatizar o qué software necesitas..." required></textarea></div>
+        <button type="submit" class="fsub" id="form-btn">
+          Enviar mensaje
+          <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div id="form-msg" style="display:none; padding:14px 18px; border-radius:10px; font-size:14px; font-weight:500;"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fl-logo">
+    <img src="logo2.svg" alt="Kairos" height="36"/>
+  </div>
+  <div>
+    <div class="fl-copy">© 2026 DLS GROUP SAS · Todos los derechos reservados</div>
+    <div class="fl-copy" style="margin-top:6px; font-size:11px; opacity:0.5; letter-spacing:1.5px;">Hecho con orgullo en Colombia 🇨🇴</div>
+  </div>
+  <div class="fl-links">
+    <a href="#servicios">Servicios</a>
+    <a href="#productos">Productos</a>
+    <a href="#proyectos">Proyectos</a>
+    <a href="#contacto">Contacto</a>
+  </div>
+</footer>
+
+<script>
+  const form = document.getElementById('contact-form');
+  const btn = document.getElementById('form-btn');
+  const msg = document.getElementById('form-msg');
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    btn.disabled = true;
+    btn.textContent = 'Enviando...';
+
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' }
+      });
+
+      if (res.ok) {
+        msg.style.display = 'block';
+        msg.style.background = 'rgba(16,185,129,0.08)';
+        msg.style.border = '1px solid rgba(16,185,129,0.25)';
+        msg.style.color = '#10B981';
+        msg.textContent = '✓ Mensaje enviado. Te respondemos en menos de 24 horas.';
+        form.reset();
+      } else {
+        throw new Error();
+      }
+    } catch {
+      msg.style.display = 'block';
+      msg.style.background = 'rgba(239,68,68,0.08)';
+      msg.style.border = '1px solid rgba(239,68,68,0.25)';
+      msg.style.color = '#EF4444';
+      msg.textContent = 'Hubo un error. Escríbenos directamente a dlskairos@gmail.com';
+    } finally {
+      btn.disabled = false;
+      btn.innerHTML = 'Enviar mensaje <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    }
+  });
+</script>
+</body>
+</html>
