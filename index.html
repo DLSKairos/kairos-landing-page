@@ -44,7 +44,7 @@
   "contactPoint": {
     "@type": "ContactPoint",
     "telephone": "+573043660371",
-    "email": "dlskairos@gmail.com",
+    "email": "gerencia@dlskairos.com",
     "contactType": "customer support",
     "availableLanguage": "Spanish"
   }
@@ -186,7 +186,7 @@ nav { position: fixed; inset: 0 0 auto 0; z-index: 100; height: 56px; padding: 0
 .tile::before { content: ''; position: absolute; inset: 0; z-index: -1; opacity: 0; transition: opacity .4s; background: radial-gradient(420px circle at var(--mx) var(--my), rgba(26,107,204,.14), transparent 60%); }
 .tile:hover { transform: translateY(-6px); box-shadow: 0 40px 80px -30px rgba(13,27,42,.32); } .tile:hover::before { opacity: 1; }
 .tile.dk { background: var(--navy); color: #fff; } .tile.dk::before { background: radial-gradient(420px circle at var(--mx) var(--my), rgba(90,165,255,.22), transparent 60%); }
-.tile h3 { font-size: clamp(1.5rem, 2.4vw, 2rem); letter-spacing: -.03em; line-height: 1.1; margin: 14px 0 10px; }
+.tile h3 { font-size: clamp(1.5rem, 2.4vw, 2rem); letter-spacing: -.03em; line-height: 1.1; margin: 0 0 10px; }
 .tile p { color: var(--mid); max-width: 29em; font-size: 1rem; } .tile.dk p { color: var(--on-dark); }
 .chip { display: inline-flex; align-self: flex-start; font: 600 .68rem/1 var(--text); letter-spacing: .12em; padding: 6px 10px; border-radius: 999px; background: rgba(26,107,204,.1); color: var(--blue); }
 .dk .chip { background: rgba(90,165,255,.16); color: var(--blue-hi); }
@@ -241,8 +241,8 @@ nav { position: fixed; inset: 0 0 auto 0; z-index: 100; height: 56px; padding: 0
 /* PRODUCTOS */
 .products { padding: var(--sec) 0 calc(var(--sec) * .6); }
 .pgrid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 6vw, 96px); align-items: start; }
-.steps { padding-bottom: 8vh; }
-.step { min-height: 92vh; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 0; opacity: .35; transition: opacity .7s var(--ease); }
+.steps { padding-bottom: 2vh; }
+.step { min-height: 74vh; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 0; opacity: .35; transition: opacity .7s var(--ease); }
 .step.on { opacity: 1; }
 .step h3 { font-size: clamp(3.2rem, 8vw, 6rem); line-height: .95; letter-spacing: -.04em; font-weight: 700; margin: 22px 0 14px; }
 .step .tag { font: 500 1.15rem var(--display); letter-spacing: -.02em; color: var(--blue); }
@@ -402,6 +402,55 @@ nav { position: fixed; inset: 0 0 auto 0; z-index: 100; height: 56px; padding: 0
 .projects .panel { margin-top: 0; }
 @media (max-width: 960px) { .pj2 { grid-template-columns: 1fr; } }
 @media (max-width: 720px) { .more { grid-template-columns: 1fr; } }
+
+
+/* PROCESO */
+.process { padding: var(--sec) 0; background: #fff; }
+.steps4 { list-style: none; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; counter-reset: s; }
+.steps4 li { border-top: 2px solid var(--night); padding-top: 22px; }
+.steps4 .n { font: 600 .8rem var(--text); letter-spacing: .12em; color: var(--blue); display: block; margin-bottom: 36px; }
+.steps4 h3 { font-size: 1.6rem; letter-spacing: -.035em; margin-bottom: 10px; }
+.steps4 p { color: var(--mid); font-size: 1rem; text-wrap: pretty; }
+/* NOSOTROS */
+.about { padding: var(--sec) 0; background: #fff; }
+.about-g { display: grid; grid-template-columns: 1.4fr .6fr; gap: clamp(32px, 6vw, 96px); align-items: center; }
+.about h2 { font-size: clamp(2.2rem, 5vw, 4rem); }
+.about-k { display: grid; place-items: center; } .about-k svg { width: min(220px, 60%); height: auto; }
+.founder { margin-top: 32px; display: flex; flex-direction: column; gap: 2px; } .founder[hidden] { display: none; } .founder b { font: 600 1.15rem var(--display); letter-spacing: -.02em; } .founder span { color: var(--mid); font-size: .95rem; }
+/* FAQ */
+.faq { padding: var(--sec) 0; }
+.faq-w { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(32px, 6vw, 96px); align-items: start; }
+.faq .head { margin-bottom: 0; }
+details { border-top: 1px solid var(--ice); } details:last-child { border-bottom: 1px solid var(--ice); }
+summary { list-style: none; cursor: pointer; padding: 22px 0; font: 500 1.15rem/1.35 var(--display); letter-spacing: -.02em; display: flex; justify-content: space-between; gap: 20px; align-items: center; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: '+'; font: 300 1.8rem/1 var(--text); color: var(--blue); transition: transform .35s var(--ease); flex-shrink: 0; }
+details[open] summary::after { transform: rotate(45deg); }
+details p { color: var(--mid); padding: 0 40px 24px 0; text-wrap: pretty; max-width: 40em; }
+/* TESTIMONIO */
+.quote { margin: clamp(48px, 7vw, 88px) 0 0; padding: clamp(28px, 4vw, 56px); border-radius: 32px; background: var(--paper); }
+.quote[hidden] { display: none; }
+.quote blockquote { font: 600 clamp(1.5rem, 3.2vw, 2.6rem)/1.2 var(--display); letter-spacing: -.035em; max-width: 24em; text-wrap: balance; }
+.quote figcaption { margin-top: 24px; color: var(--mid); font-size: .98rem; }
+.quote figcaption b { color: var(--night); font-weight: 600; }
+.quote figcaption span { display: block; margin-top: 4px; font-size: .82rem; letter-spacing: .02em; }
+/* consentimiento + whatsapp */
+.consent { display: flex; gap: 12px; align-items: flex-start; font-size: .88rem; color: rgba(255,255,255,.72); line-height: 1.45; cursor: pointer; }
+.consent input { width: 18px; height: 18px; margin-top: 2px; accent-color: var(--blue); flex-shrink: 0; }
+.consent a { color: var(--blue-hi); text-decoration: underline; text-underline-offset: 3px; }
+.wa { position: fixed; right: max(16px, env(safe-area-inset-right)); bottom: max(16px, env(safe-area-inset-bottom)); z-index: 90; display: inline-flex; align-items: center; gap: 10px; background: #18a957; color: #fff; padding: 14px 20px; border-radius: 999px; font: 600 .95rem var(--text); box-shadow: 0 14px 30px -10px rgba(0,0,0,.5); transition: transform .3s var(--ease), background .2s; }
+.wa:hover { background: #12924b; transform: translateY(-2px); } .wa:active { transform: scale(.95); }
+.wa .ico { font-size: 22px; }
+@media (max-width: 960px) { .steps4 { grid-template-columns: 1fr 1fr; gap: 36px 20px; } .about-g, .faq-w { grid-template-columns: 1fr; } .about-k { display: none; } }
+@media (max-width: 720px) { .steps4 { grid-template-columns: 1fr; } .wa span { display: none; } .wa { padding: 15px; } details p { padding-right: 0; } }
+
+
+.cookies { position: fixed; left: 16px; bottom: 16px; z-index: 95; max-width: 440px; padding: 18px 20px; border-radius: 22px; background: rgba(12,18,28,.92); color: rgba(255,255,255,.85); border: 1px solid rgba(255,255,255,.14); -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px); box-shadow: 0 20px 50px -20px rgba(0,0,0,.7); font-size: .88rem; line-height: 1.5; }
+.cookies a { color: var(--blue-hi); text-underline-offset: 3px; }
+.cookies div { display: flex; gap: 10px; margin-top: 14px; }
+.cookies button { flex: 1; padding: 11px 16px; border-radius: 999px; border: 1px solid rgba(255,255,255,.22); background: transparent; color: #fff; font: 500 .88rem var(--text); cursor: pointer; transition: transform .2s var(--ease), background .2s; }
+.cookies button:active { transform: scale(.96); } .cookies button.y { background: #fff; color: var(--ink); border-color: #fff; }
+@media (max-width: 720px) { .cookies { right: 16px; max-width: none; } body.cb .wa { bottom: 190px; } }
 
 /* CONTACTO */
 .contact { padding: var(--sec) 0; overflow: hidden; }
@@ -631,7 +680,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
       <article class="feat rv">
         <div class="sector">CONSTRUCCIÓN · MAQUINARIA PESADA · SST</div>
         <h3>La Central</h3>
-        <p>PWA desarrollada para GyE SAS que digitaliza y automatiza todos los formatos SST de operarios y administradores de torres grúas, bombas de concreto y maquinaria pesada. Control de horas extras y formularios operativos en tiempo real.</p>
+        <p>PWA desarrollada para una empresa del sector construcción que digitaliza y automatiza todos los formatos SST de operarios y administradores de torres grúas, bombas de concreto y maquinaria pesada. Control de horas extras y formularios operativos en tiempo real.</p>
         <div class="mini">
           <div><b>+15</b><span>FORMULARIOS</span></div>
           <div><b>110</b><span>OPERARIOS</span></div>
@@ -670,6 +719,10 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
         <div class="big d"><b data-count="85" data-pre="−" data-suf="%">−85%</b><span>TIEMPO MANUAL</span></div>
       </div>
     </div>
+    <figure class="quote rv" id="testimonio" hidden>
+      <blockquote>“[PEGAR AQUÍ LA FRASE REAL DEL CLIENTE]”</blockquote>
+      <figcaption><b>Gerencia</b> · Empresa de construcción y maquinaria pesada <span>Nombre reservado a petición del cliente</span></figcaption>
+    </figure>
     <div class="sub-h rv">
       <h3>Y más casos entregados.</h3>
     </div>
@@ -711,7 +764,6 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     </div>
     <div class="bento">
       <article class="tile dk t-a rv">
-        <span class="chip">IA INTEGRADA</span>
         <h3>Software a medida</h3>
         <p>Sistemas diseñados exactamente para tu operación. Desde el modelo de datos hasta la interfaz final.</p>
         <div class="vis"><pre class="code" aria-hidden="true"><span class="k">export async function</span> <span class="f">aprobarPermiso</span>(p: Permiso) {
@@ -721,7 +773,6 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 }</pre></div>
       </article>
       <article class="tile t-b rv" style="--d:.08s">
-        <span class="chip">IA INTEGRADA</span>
         <h3>Automatización de procesos</h3>
         <p>Convertimos lo que te roba tiempo en flujos automáticos que trabajan por ti 24/7.</p>
         <div class="vis">
@@ -735,13 +786,11 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
         </div>
       </article>
       <article class="tile dk t-c rv">
-        <span class="chip">IA INTEGRADA</span>
         <h3>Apps nativas y PWA</h3>
         <p>Aplicaciones móviles nativas para iOS y Android, y Progressive Web Apps offline-first.</p>
         <div class="vis"><div class="mp" aria-hidden="true"><div><b>iOS</b><i class="b"></i><i></i><i></i></div><div><b>ANDROID</b><i class="b"></i><i></i><i></i></div></div></div>
       </article>
       <article class="tile t-d rv" style="--d:.08s">
-        <span class="chip">IA INTEGRADA</span>
         <h3>Integración de sistemas</h3>
         <p>Conectamos tus herramientas — ERP, CRM, APIs — para que toda tu data fluya sin fricción.</p>
         <div class="vis">
@@ -754,13 +803,11 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
         </div>
       </article>
       <article class="tile t-e rv" style="--d:.16s">
-        <span class="chip">IA INTEGRADA</span>
         <h3>Plataformas web</h3>
         <p>Portales, dashboards y plataformas de alto rendimiento con tecnología moderna y escalable.</p>
         <div class="vis"><div class="bm" aria-hidden="true"><div class="bm-bar"><i></i><i></i><i></i></div><div class="bm-b"><div class="bars"><i style="--i:0;height:40%"></i><i style="--i:1;height:62%"></i><i style="--i:2;height:48%"></i><i style="--i:3;height:80%"></i><i style="--i:4;height:68%"></i><i style="--i:5;height:100%"></i></div><div class="k"></div><div class="k"></div></div></div></div>
       </article>
       <article class="tile dk t-f rv">
-        <span class="chip">ESTRATEGIA</span>
         <h3>Consultoría tecnológica</h3>
         <p>Definimos contigo la arquitectura correcta antes de escribir una sola línea de código.</p>
         <div class="vis"><div class="bp" aria-hidden="true">
@@ -771,6 +818,23 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
         </div></div>
       </article>
     </div>
+  </div>
+</section>
+
+<!-- CÓMO TRABAJAMOS -->
+<section id="proceso" class="process">
+  <div class="wrap">
+    <div class="head center rv">
+      <h2>Así trabajamos.</h2>
+      <p class="lead">De la primera llamada a tu software en marcha, sin sorpresas.</p>
+    </div>
+    <ol class="steps4">
+      <li class="rv"><span class="n">1</span><h3>Diagnóstico</h3><p>Una llamada de 30 minutos y, en menos de 24 horas, un diagnóstico inicial sin costo de tu reto.</p></li>
+      <li class="rv" style="--d:.08s"><span class="n">2</span><h3>Arquitectura</h3><p>Definimos contigo la arquitectura correcta antes de escribir una sola línea de código.</p></li>
+      <li class="rv" style="--d:.16s"><span class="n">3</span><h3>Desarrollo</h3><p>Construimos tu software a medida, con inteligencia artificial integrada desde el núcleo.</p></li>
+      <li class="rv" style="--d:.24s"><span class="n">4</span><h3>Puesta en marcha</h3><p>Lo ponemos a trabajar en tu operación y medimos el resultado junto a tu equipo.</p></li>
+    </ol>
+    <div class="center rv" style="margin-top:56px"><a href="https://calendly.com/dlskairos/30min" target="_blank" rel="noopener" class="btn btn-p">Agenda tu llamada de 30 minutos <svg class="ico"><use href="#i-arrow"/></svg></a></div>
   </div>
 </section>
 
@@ -938,8 +1002,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     <div class="ia-grid">
       <div class="rv">
         <h2 class="ia-h">Una IA especializada para cada solución.</h2>
-        <p class="t">Cada software y app que construimos en Kairos incluye una inteligencia artificial entrenada y personalizada únicamente para ese caso de uso — no una IA genérica adaptada, sino un cerebro digital diseñado desde cero para entender tu operación, tu industria y tus datos.</p>
-        <p class="t">La IA aprende de tu negocio, habla el lenguaje de tu equipo y toma decisiones contextualizadas — no respuestas de plantilla. Cada Kairos IA es única, igual que el problema que resuelve.</p>
+        <p class="t">Cada software y app que construimos en Kairos incluye una inteligencia artificial diseñada para ese caso de uso — no una IA genérica con respuestas de plantilla, sino un asistente pensado desde cero para entender tu operación, tu industria y tus datos, que habla el lenguaje de tu equipo y ayuda a decidir con contexto.</p>
       </div>
       <div class="rv" style="--d:.12s">
         <div class="chat" id="chat">
@@ -951,15 +1014,47 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     </div>
     <div class="ia-feats">
       <div class="rv"><h3>IA contextualizada</h3><p>Cada IA conoce tu industria, tu vocabulario y tus procesos. No hay respuestas genéricas.</p></div>
-      <div class="rv" style="--d:.1s"><h3>Aprende con tu operación</h3><p>Cuanto más la usas, más precisa se vuelve. Tu IA mejora contigo.</p></div>
+      <div class="rv" style="--d:.1s"><h3>Se afina contigo</h3><p>La ajustamos con base en cómo la usa tu equipo, para que sea cada vez más útil en tu operación.</p></div>
       <div class="rv" style="--d:.2s"><h3>Decisiones, no sugerencias</h3><p>Analiza, procesa y actúa — no solo informa. La IA trabaja, tú decides.</p></div>
     </div>
     <div class="anth rv">
       <div>
         <h3>Powered by Anthropic · Claude</h3>
-        <p>Usamos la tecnología de Anthropic — el mismo motor de IA usado por empresas Fortune 500 alrededor del mundo. Estado del arte en IA responsable y de alto rendimiento.</p>
+        <p>Usamos la tecnología de Anthropic (Claude), uno de los modelos de IA más avanzados del mundo, con foco en IA responsable y de alto rendimiento.</p>
       </div>
       <span class="tag">Powered by Anthropic</span>
+    </div>
+  </div>
+</section>
+
+<!-- NOSOTROS -->
+<section id="nosotros" class="about">
+  <div class="wrap about-g">
+    <div class="rv">
+      <h2>Kairos: el momento oportuno.</h2>
+      <p class="lead" style="margin-top:24px">Kairos es una palabra griega que significa el momento justo para actuar. Así entendemos el software: no como un proyecto más, sino como el punto en que tu empresa deja de depender de procesos manuales y empieza a crecer sin límites operativos.</p>
+      <p class="lead" style="margin-top:18px">Somos DLS Group S.A.S., una empresa colombiana de desarrollo de software. Construimos software a medida, apps y productos propios con inteligencia artificial integrada para empresas, fundaciones e instituciones públicas.</p>
+      <p class="founder"><b>David Leonardo Lamprea Segura</b><span>Fundador · DLS Group S.A.S.</span></p>
+    </div>
+    <div class="about-k rv" style="--d:.12s" aria-hidden="true">
+      <svg viewBox="186 20 90 120"><rect x="190" y="25" width="9" height="110" rx="2" fill="#0D1B2A"/><polygon points="199,80 242,25 258,25 215,80" fill="#1A6BCC"/><polygon points="199,80 242,135 258,135 215,80" fill="#0D1B2A"/><circle cx="263" cy="30" r="6" fill="#1A6BCC"/></svg>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="faq gray-sec">
+  <div class="wrap faq-w">
+    <div class="head rv"><h2>Preguntas frecuentes.</h2></div>
+    <div class="rv">
+      <details><summary>¿Cuánto cuesta desarrollar un software con ustedes?</summary><p>Depende del alcance de tu reto. Por eso empezamos con un diagnóstico inicial sin costo: con lo que entendamos te presentamos una propuesta clara antes de que te comprometas con nada.</p></details>
+      <details><summary>¿Cuánto tiempo toma?</summary><p>Depende de lo que necesites construir. En el diagnóstico definimos el alcance y acordamos los tiempos contigo en la propuesta.</p></details>
+      <details><summary>¿Qué tipo de software construyen?</summary><p>Software a medida, apps nativas para iOS y Android, PWA, plataformas web, integraciones con tus sistemas (ERP, CRM, APIs) y automatización de procesos.</p></details>
+      <details><summary>¿Qué significa que la IA venga integrada?</summary><p>Cada solución incluye un asistente de IA pensado para tu caso de uso: conoce tu industria, tu vocabulario y tus procesos, y ayuda a analizar, decidir y automatizar. Usamos la tecnología de Anthropic (Claude).</p></details>
+      <details><summary>¿Trabajan con entidades públicas?</summary><p>Sí. Hemos desarrollado para el ICCU, del departamento de Cundinamarca, y para la Alcaldía de Medellín, además de empresas privadas y fundaciones.</p></details>
+      <details><summary>¿De quién es el código?</summary><p>Depende de cómo nos contrates. Si usas una de nuestras apps (como SEÑAL), el software es de Kairos y lo usas bajo arrendamiento. Si nos contratas para un desarrollo personalizado, las condiciones sobre el código las acordamos contigo.</p></details>
+      <details><summary>¿Cómo funciona el soporte?</summary><p>El soporte es personalizado: respondemos y corregimos en menos de 24 horas.</p></details>
+      <details><summary>¿Puedo usar una de sus apps con mi propia marca?</summary><p>SEÑAL se personaliza por completo: permisos, formularios, flujos, colores y marca propia. Cuéntanos tu caso y vemos qué producto encaja o si conviene un desarrollo a medida.</p></details>
     </div>
   </div>
 </section>
@@ -973,7 +1068,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
         <p class="lead" style="margin-top:22px">Cuéntanos tu reto. En menos de 24 horas te respondemos con un diagnóstico inicial sin costo.</p>
         <div class="channels">
           <a href="https://wa.me/573043660371" class="ch"><span class="ic"><svg class="ico"><use href="#i-chat"/></svg></span><div><small>WHATSAPP</small><b>+57 304 366 0371</b></div></a>
-          <a href="mailto:gerencia@kairosdls.com" class="ch"><span class="ic"><svg class="ico"><use href="#i-mail"/></svg></span><div><small>EMAIL</small><b>gerencia@kairosdls.com</b></div></a>
+          <a href="mailto:gerencia@dlskairos.com" class="ch"><span class="ic"><svg class="ico"><use href="#i-mail"/></svg></span><div><small>EMAIL</small><b>gerencia@dlskairos.com</b></div></a>
           <a href="https://calendly.com/dlskairos/30min" target="_blank" rel="noopener" class="ch"><span class="ic"><svg class="ico"><use href="#i-cal"/></svg></span><div><small>VIDEOLLAMADA</small><b>Agenda 30 minutos</b></div></a>
         </div>
       </div>
@@ -984,6 +1079,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
         </div>
         <div class="fg"><label for="f-m">EMAIL</label><input id="f-m" type="email" name="email" class="fi" placeholder="tu@empresa.com" autocomplete="email" required/></div>
         <div class="fg"><label for="f-r">¿CUÁL ES TU RETO?</label><textarea id="f-r" name="mensaje" class="fi" placeholder="Cuéntanos qué proceso quieres automatizar o qué software necesitas..." required></textarea></div>
+        <label class="consent"><input type="checkbox" name="consentimiento" required/><span>Acepto la <a href="politica-datos.html" target="_blank" rel="noopener">Política de tratamiento de datos personales</a>.</span></label>
         <button type="submit" class="btn btn-p" id="form-btn">Enviar mensaje <svg class="ico"><use href="#i-arrow"/></svg></button>
         <div id="form-msg" role="status"></div>
       </form>
@@ -1010,10 +1106,12 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
       <a href="#servicios">Servicios</a>
       <a href="#productos">Productos</a>
       <a href="#contacto">Contacto</a>
+      <a href="politica-datos.html">Política de datos</a>
     </div>
   </div>
 </footer>
 
+<a class="wa" href="https://wa.me/573043660371?text=Hola%20Kairos%2C%20quiero%20conversar%20sobre%20un%20proyecto" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp"><svg class="ico"><use href="#i-chat"/></svg><span>Escríbenos</span></a>
 <script>
 (function () {
   var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -1177,6 +1275,37 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     }, { threshold: .6 }).observe(n);
   });
 
+  /* analítica: Google Analytics 4, solo con consentimiento */
+  var GA_ID = 'G-VWKLH1PMMQ'; // pega aquí tu ID de medición, por ejemplo 'G-XXXXXXXXXX'
+  function track(n) { if (window.gtag) gtag('event', n); }
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a'); if (!a) return;
+    var u = a.getAttribute('href') || '';
+    if (u.indexOf('wa.me') > -1) track('whatsapp_click');
+    else if (u.indexOf('calendly') > -1) track('agenda_click');
+    else if (u.indexOf('mailto:') === 0) track('email_click');
+  });
+  (function () {
+    if (!GA_ID) return;
+    var key = 'kairos-cookies', pref = null;
+    try { pref = localStorage.getItem(key); } catch (e) {}
+    function load() {
+      var s = document.createElement('script'); s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID; document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || []; window.gtag = function () { dataLayer.push(arguments); };
+      gtag('js', new Date()); gtag('config', GA_ID, { anonymize_ip: true });
+    }
+    if (pref === 'si') { load(); return; }
+    if (pref === 'no') return;
+    var b = document.createElement('div'); b.className = 'cookies'; b.setAttribute('role', 'dialog'); b.setAttribute('aria-label', 'Cookies de analítica');
+    b.innerHTML = '<p>Usamos cookies de analítica (Google Analytics) para entender cómo se usa el sitio y mejorarlo. <a href="politica-datos.html" target="_blank" rel="noopener">Más información</a></p><div><button type="button" data-v="no">Rechazar</button><button type="button" data-v="si" class="y">Aceptar</button></div>';
+    document.body.appendChild(b); document.body.classList.add('cb');
+    b.addEventListener('click', function (e) {
+      var v = e.target.getAttribute && e.target.getAttribute('data-v'); if (!v) return;
+      try { localStorage.setItem(key, v); } catch (x) {}
+      b.remove(); document.body.classList.remove('cb'); if (v === 'si') load();
+    });
+  })();
+
   /* form */
   var form = $('#contact-form'), btn = $('#form-btn'), msg = $('#form-msg');
   var arrow = '<svg class="ico"><use href="#i-arrow"/></svg>';
@@ -1186,10 +1315,10 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
       var res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
       if (!res.ok) throw new Error();
       msg.style.cssText = 'display:block;background:rgba(40,200,120,.12);border:1px solid rgba(40,200,120,.35);color:#6fe0a5';
-      msg.textContent = '✓ Mensaje enviado. Te respondemos en menos de 24 horas.'; form.reset();
+      msg.textContent = '✓ Mensaje enviado. Te respondemos en menos de 24 horas.'; form.reset(); track('formulario_enviado');
     } catch (_) {
       msg.style.cssText = 'display:block;background:rgba(255,90,90,.12);border:1px solid rgba(255,90,90,.35);color:#ff9d9d';
-      msg.textContent = 'Hubo un error. Escríbenos directamente a gerencia@kairosdls.com';
+      msg.textContent = 'Hubo un error. Escríbenos directamente a gerencia@dlskairos.com';
     } finally { btn.disabled = false; btn.innerHTML = 'Enviar mensaje ' + arrow; }
   });
 })();
