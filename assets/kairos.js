@@ -266,7 +266,7 @@
       msg.textContent = '✓ Mensaje enviado. Te respondemos en menos de 24 horas.'; form.reset(); window.track && window.track('formulario_enviado');
     } catch (_) {
       msg.style.cssText = 'display:block;background:rgba(255,90,90,.12);border:1px solid rgba(255,90,90,.35);color:#ff9d9d';
-      msg.textContent = 'Hubo un error. Escríbenos directamente a gerencia@dlskairos.com';
+      msg.textContent = 'Hubo un error. Escríbenos directamente a gerencia@kairosdls.com';
     } finally { btn.disabled = false; btn.innerHTML = 'Enviar mensaje ' + arrow; }
   });
 })();

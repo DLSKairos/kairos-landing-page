@@ -170,7 +170,7 @@
         if (window.track) window.track('senal_demo_enviada');
       } catch (_) {
         msg.style.cssText = 'display:block;background:rgba(232,101,10,.12);border:2px solid #E8650A;color:var(--warn)';
-        msg.textContent = 'No pudimos enviarlo. Escríbenos a gerencia@dlskairos.com o por WhatsApp.';
+        msg.textContent = 'No pudimos enviarlo. Escríbenos a gerencia@kairosdls.com o por WhatsApp.';
       } finally { btn.disabled = false; btn.innerHTML = label; }
     });
   }
@@ -273,7 +273,7 @@
     },
     evidence: {
       on: function (i, root) {
-        var msgs = [['s-finger', 'Ingresa con tu huella', 'O con tu PIN.'], ['s-wifioff', 'Conexión lenta', 'Tus respuestas se guardan en el dispositivo.'], ['s-sign', 'Firma y foto adjuntas', 'Evidencia capturada mientras se trabaja.'], ['s-pin', 'Ubicación y hora', 'Quedan registradas con el envío.'], ['s-check', 'Enviado a revisión', 'Trazable de principio a fin.']];
+        var msgs = [['s-finger', 'Ingresa con tu huella', 'O con tu PIN.'], ['s-wifioff', 'Conexión lenta', 'Se guardan y se envían al volver la señal.'], ['s-sign', 'Firma y foto adjuntas', 'Evidencia capturada mientras se trabaja.'], ['s-pin', 'Ubicación y hora', 'Quedan registradas con el envío.'], ['s-check', 'Enviado a revisión', 'Trazable de principio a fin.']];
         var m = msgs[i], snk = $('.snk', root);
         snk.innerHTML = ico(m[0]) + '<div class="swap"><b>' + m[1] + '</b><span>' + m[2] + '</span></div>';
       }
