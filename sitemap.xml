@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://kairosdls.com/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://kairosdls.com/politica-datos.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
+  <url><loc>https://kairosdls.com/</loc></url>
+  <url><loc>https://kairosdls.com/senal.html</loc></url>
+  <url><loc>https://kairosdls.com/senal-juego.html</loc></url>
+  <url><loc>https://kairosdls.com/senal-ia.html</loc></url>
+  <url><loc>https://kairosdls.com/senal-funciones.html</loc></url>
+  <url><loc>https://kairosdls.com/senal-campo.html</loc></url>
+  <url><loc>https://kairosdls.com/senal-demo.html</loc></url>
+  <url><loc>https://kairosdls.com/casos.html</loc></url>
+  <url><loc>https://kairosdls.com/servicios.html</loc></url>
+  <url><loc>https://kairosdls.com/productos.html</loc></url>
+  <url><loc>https://kairosdls.com/ia.html</loc></url>
+  <url><loc>https://kairosdls.com/contacto.html</loc></url>
+  <url><loc>https://kairosdls.com/politica-datos.html</loc></url>
 </urlset>

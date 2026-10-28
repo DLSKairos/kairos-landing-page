@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<title>Funciones por rol — SEÑAL | Operario, administrador y organización</title>
+<script>document.documentElement.classList.add('js')</script>
+<meta name="description" content="Formularios, permisos, actas, inventarios, asistencia y alertas en una sola plataforma. Funciones para el operario, el administrador y la organización, con webhooks y exportes a PDF y Excel."/>
+<meta name="robots" content="index, follow"/>
+<meta name="theme-color" content="#F3F1EA" media="(prefers-color-scheme: light)"/>
+<meta name="theme-color" content="#141310" media="(prefers-color-scheme: dark)"/>
+<link rel="canonical" href="https://kairosdls.com/senal-funciones.html"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Funciones por rol — SEÑAL | Operario, administrador y organización"/>
+<meta property="og:description" content="Formularios, permisos, actas, inventarios, asistencia y alertas en una sola plataforma. Funciones para el operario, el administrador y la organización, con webhooks y exportes a PDF y Excel."/>
+<meta property="og:url" content="https://kairosdls.com/senal-funciones.html"/>
+<meta property="og:image" content="https://kairosdls.com/og-image.png"/>
+<meta property="og:locale" content="es_CO"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Funciones por rol — SEÑAL | Operario, administrador y organización"/>
+<meta name="twitter:description" content="Formularios, permisos, actas, inventarios, asistencia y alertas en una sola plataforma. Funciones para el operario, el administrador y la organización, con webhooks y exportes a PDF y Excel."/>
+<meta name="twitter:image" content="https://kairosdls.com/og-image.png"/>
+<link rel="icon" type="image/png" href="logo3.png"/>
+<link rel="apple-touch-icon" href="logo3.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/senal.css"/>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="s-mark" viewBox="0 0 24 24"><path d="M5 5a10 10 0 0 0 0 14M19 5a10 10 0 0 1 0 14M8.5 8.5a5 5 0 0 0 0 7M15.5 8.5a5 5 0 0 1 0 7"/><circle cx="12" cy="12" r="1.4" fill="currentColor"/></symbol>
+<symbol id="s-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+<symbol id="s-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+<symbol id="s-chat" viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.7-5.2A8.5 8.5 0 1 1 21 11.5z"/></symbol>
+<symbol id="s-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3.5 7.5l8.5 6 8.5-6"/></symbol>
+<symbol id="s-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+<symbol id="s-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+<symbol id="s-cam" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="3"/><path d="M8 7l1.5-3h5L16 7"/><circle cx="12" cy="13.5" r="3.5"/></symbol>
+<symbol id="s-finger" viewBox="0 0 24 24"><path d="M12 4a7 7 0 0 0-7 7v2M12 8a3 3 0 0 0-3 3v3a8 8 0 0 0 1.5 4.5M12 12v2.5a10 10 0 0 0 2 6M16 10.5V14c0 2 .4 3.8 1.2 5.4M19 12v-1a7 7 0 0 0-3-5.7"/></symbol>
+<symbol id="s-wifioff" viewBox="0 0 24 24"><path d="M3 3l18 18M2 8.8a15 15 0 0 1 4-2.4M22 8.8a15 15 0 0 0-8-3.6M5.5 12.6a10 10 0 0 1 3-1.9M18.5 12.6a10 10 0 0 0-3.4-2M9 16.2a5 5 0 0 1 6 0M12 20h.01"/></symbol>
+<symbol id="s-phone" viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="3"/><path d="M11 18h2"/></symbol>
+<symbol id="s-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.6-3.6 3.2-5.5 6.5-5.5s5.9 1.9 6.5 5.5M16 5.2a3.5 3.5 0 0 1 0 6.6M18 14.8c2 .6 3.2 2.3 3.5 5.2"/></symbol>
+<symbol id="s-plug" viewBox="0 0 24 24"><path d="M9 3v5M15 3v5M6 8h12v3a6 6 0 0 1-12 0V8zM12 17v4"/></symbol>
+<symbol id="s-doc" viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7V3zM14 3v4h4M10 12h5M10 16h5"/></symbol>
+<symbol id="s-spark" viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3zM19 16l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7.7-2z"/></symbol>
+<symbol id="s-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></symbol>
+<symbol id="s-alert" viewBox="0 0 24 24"><path d="M12 4l9 16H3L12 4zM12 10v4M12 17h.01"/></symbol>
+<symbol id="s-sign" viewBox="0 0 24 24"><path d="M3 18c3 0 4-8 6-8s0 8 3 8 3-5 5-5 1 3 4 3"/></symbol>
+<symbol id="s-layers" viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5 9-5zM3 13l9 5 9-5"/></symbol>
+<symbol id="s-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+<symbol id="s-download" viewBox="0 0 24 24"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></symbol>
+<symbol id="s-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol>
+<symbol id="s-bolt" viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></symbol>
+<symbol id="s-game" viewBox="0 0 24 24"><path d="M7 7h10a5 5 0 0 1 4.9 4l.9 4.4a2.5 2.5 0 0 1-4.3 2.1L16 16H8l-2.5 1.5a2.5 2.5 0 0 1-4.3-2.1l.9-4.4A5 5 0 0 1 7 7zM7 10v4M5 12h4M15.5 11h.01M18 13h.01"/></symbol>
+<symbol id="s-building" viewBox="0 0 24 24"><path d="M4 21V5l8-2v18M12 9h8v12M7 9h2M7 13h2M7 17h2M15 13h2M15 17h2"/></symbol>
+<symbol id="s-box" viewBox="0 0 24 24"><path d="M3 7l9-4 9 4-9 4-9-4zM3 7v10l9 4 9-4V7M12 11v10"/></symbol>
+<symbol id="s-edit" viewBox="0 0 24 24"><path d="M4 20l4-1L19 8l-3-3L5 16l-1 4z"/></symbol>
+<symbol id="s-chart" viewBox="0 0 24 24"><path d="M4 20h16M7 20v-7M12 20V6M17 20v-10"/></symbol>
+<symbol id="s-bell" viewBox="0 0 24 24"><path d="M6 16v-5a6 6 0 1 1 12 0v5l1.5 2h-15L6 16zM10 21h4"/></symbol>
+<symbol id="s-flow" viewBox="0 0 24 24"><path d="M4 4h6v6H4zM14 14h6v6h-6zM10 7h4a3 3 0 0 1 3 3v4"/></symbol>
+<symbol id="s-type" viewBox="0 0 24 24"><path d="M5 6V4h14v2M12 4v16M9 20h6"/></symbol>
+<symbol id="s-hash" viewBox="0 0 24 24"><path d="M5 9h14M5 15h14M10 4L8 20M16 4l-2 16"/></symbol>
+<symbol id="s-list" viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11M4 6h.01M4 12h.01M4 18h.01"/></symbol>
+<symbol id="s-toggle" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="10" rx="5"/><circle cx="16" cy="12" r="2.5"/></symbol>
+<symbol id="s-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+<symbol id="s-info" viewBox="0 0 24 24"><path d="M12 11v6M12 7.5h.01"/></symbol>
+<symbol id="s-file" viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7V3zM14 3v4h4"/></symbol>
+</defs></svg>
+<a class="skip" href="#main">Saltar al contenido</a>
+<header class="sn">
+  <a href="senal.html" class="sn-logo" aria-label="SEÑAL — inicio"><span class="sn-mark"><svg class="ico " aria-hidden="true"><use href="#s-mark"/></svg></span>SEÑAL<small>por Kairos</small></a>
+  <button type="button" class="sn-tg" aria-label="Menú" aria-expanded="false" aria-controls="snl"><span></span><span></span></button>
+  <nav class="sn-links" id="snl" aria-label="Principal">
+      <a href="senal.html">Cómo funciona</a>
+      <a href="senal-juego.html">Modo Juego</a>
+      <a href="senal-ia.html">IA</a>
+      <a href="senal-funciones.html" aria-current="page">Funciones</a>
+      <a href="senal-campo.html">Campo</a>
+      <a href="index.html">Kairos</a>
+      <a href="senal-demo.html" class="b b-p" data-cta="nav_demo">Agenda una demo</a>
+  </nav>
+</header>
+<main id="main">
+<section class="hero page">
+  
+  <div class="wrap">
+    <div class="hero-g"><div>
+      <h1 class="h1 hi">Una sola plataforma, <em>en lugar de cinco herramientas.</em></h1>
+      <p class="lead hi d1">Formularios, permisos, actas, inventarios, asistencia y alertas conviven en SEÑAL, con la misma firma, el mismo registro y el mismo panel.</p>
+      
+    </div></div>
+  </div>
+</section>
+
+<section class="sec" style="padding-top:0">
+  <div class="wrap">
+    <ul class="mods rv">
+      <li><svg class="ico " aria-hidden="true"><use href="#s-doc"/></svg><b>Formularios</b><span>De inspección y de proceso, con los 11 tipos de campo.</span></li>
+      <li><svg class="ico " aria-hidden="true"><use href="#s-shield"/></svg><b>Permisos de trabajo</b><span>Solicitud, firma y aprobación con evidencia.</span></li>
+      <li><svg class="ico " aria-hidden="true"><use href="#s-file"/></svg><b>Actas</b><span>Reuniones y charlas con asistentes y firmas.</span></li>
+      <li><svg class="ico " aria-hidden="true"><use href="#s-box"/></svg><b>Inventarios</b><span>Conteos y registros desde el celular.</span></li>
+      <li><svg class="ico " aria-hidden="true"><use href="#s-pin"/></svg><b>Asistencia</b><span>Entrada y salida con ubicación.</span></li>
+      <li><svg class="ico " aria-hidden="true"><use href="#s-alert"/></svg><b>Alertas y SOS</b><span>Avisos del personal en campo y botón SOS.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec alt">
+  <div class="wrap">
+    <div class="sec-h rv"><h2 class="h2">El recorrido de <em>un registro.</em></h2></div>
+    <div class="story" data-story="record"><div class="story-g"><div class="story-steps"><div class="story-step"><span class="no">1</span><h3>El operario llena y firma.</h3><p>Desde el celular, con firma, foto y ubicación.</p></div><div class="story-step"><span class="no">2</span><h3>Llega al panel.</h3><p>El administrador ve el registro apenas se envía, con su evidencia.</p></div><div class="story-step"><span class="no">3</span><h3>Se aprueba o se rechaza.</h3><p>Con la firma, la foto, la ubicación y la hora a la vista.</p></div><div class="story-step"><span class="no">4</span><h3>Sale a donde lo necesites.</h3><p>Exportas a PDF o Excel, o un webhook avisa a tus otros sistemas.</p></div></div><div class="story-stage" inert aria-hidden="true"><div class="scene" data-s="0"><div class="phone"><div class="scr"><div class="fin"><span class="big"><svg class="ico " aria-hidden="true"><use href="#s-check"/></svg></span><h4>Permiso enviado</h4><p>Trabajo en alturas · 6:16</p><ul><li><svg class="ico " aria-hidden="true"><use href="#s-sign"/></svg>Firma digital</li><li><svg class="ico " aria-hidden="true"><use href="#s-cam"/></svg>Foto de evidencia</li><li><svg class="ico " aria-hidden="true"><use href="#s-pin"/></svg>Ubicación y hora</li></ul></div></div></div></div>
+  <div class="scene" data-s="1"><div class="adm"><div class="adm-h">Revisión · permisos de hoy</div><ul class="adm-l"><li><b>J. Ramírez</b><span>Trabajo en alturas</span><i class="chip ok">Aprobado</i></li><li class="new"><b>M. Torres</b><span>Trabajo eléctrico</span><i class="chip pend" data-flip>Pendiente</i></li><li><b>C. López</b><span>Trabajo en caliente</span><i class="chip bad">Rechazado</i></li></ul><div class="adm-ev"><span><svg class="ico " aria-hidden="true"><use href="#s-check"/></svg>Firma</span><span><svg class="ico " aria-hidden="true"><use href="#s-check"/></svg>Foto</span><span><svg class="ico " aria-hidden="true"><use href="#s-check"/></svg>Ubicación</span><span><svg class="ico " aria-hidden="true"><use href="#s-check"/></svg>Hora</span></div></div></div>
+  <div class="scene" data-s="2"><div class="exp"><div style="--i:0"><svg class="ico " aria-hidden="true"><use href="#s-download"/></svg>PDF<small><svg class="ico " aria-hidden="true"><use href="#s-check"/></svg> listo</small></div><div style="--i:1"><svg class="ico " aria-hidden="true"><use href="#s-chart"/></svg>Excel<small><svg class="ico " aria-hidden="true"><use href="#s-check"/></svg> listo</small></div><div style="--i:2"><svg class="ico " aria-hidden="true"><use href="#s-plug"/></svg>Webhook<small><svg class="ico " aria-hidden="true"><use href="#s-check"/></svg> enviado</small></div></div></div></div></div></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-h rv"><h2 class="h2">Cada rol ve <em>lo que necesita.</em></h2></div>
+    <div data-tabs>
+      <div class="tabs" role="tablist" aria-label="Funciones por rol">
+        <button role="tab" id="t1" aria-controls="p1" aria-selected="true">Operario</button>
+        <button role="tab" id="t2" aria-controls="p2" aria-selected="false" tabindex="-1">Administrador</button>
+        <button role="tab" id="t3" aria-controls="p3" aria-selected="false" tabindex="-1">Organización</button>
+      </div>
+      <div id="p1" role="tabpanel" aria-labelledby="t1" class="panel"><ul class="fx"><li><svg class="ico " aria-hidden="true"><use href="#s-phone"/></svg><b>App instalable (PWA)</b><span>En el celular, sin tienda de apps.</span></li><li><svg class="ico " aria-hidden="true"><use href="#s-finger"/></svg><b>Huella, rostro o PIN</b><span>Biometría para quien no recuerda contraseñas.</span></li><li><svg class="ico " aria-hidden="true"><use href="#s-game"/></svg><b>Modo Juego y Modo Lite</b><span>El formulario como ruta de niveles, o directo.</span></li><li><svg class="ico " aria-hidden="true"><use href="#s-doc"/></svg><b>Formularios dinámicos</b><span>11 tipos de campo, con firma, foto y ubicación.</span></li><li><svg class="ico " aria-hidden="true"><use href="#s-pin"/></svg><b>Asistencia con ubicación</b><span>Entrada y salida registradas desde el sitio de trabajo.</span></li><li><svg class="ico " aria-hidden="true"><use href="#s-alert"/></svg><b>Permisos, actas, inventarios y alertas</b><span>Más el botón SOS.</span></li><li><svg class="ico " aria-hidden="true"><use href="#s-wifioff"/></svg><b>Modo offline básico</b><span>Con avisos cuando la conexión es lenta.</span></li><li><svg class="ico " aria-hidden="true"><use href="#s-bell"/></svg><b>Notificaciones push</b><span>Avisos directos al celular.</span></li></ul></div>
+      <div id="p2" role="tabpanel" aria-labelledby="t2" class="panel" hidden><ul class="fx"><li><svg class="ico " aria-hidden="true"><use href="#s-layers"/></svg><b>Editor visual de formularios</b><span>Arrastrar y soltar, sin código.</span></li><li><svg class="ico " aria-hidden="true"><use href="#s-spark"/></svg><b>IA que crea formularios</b><span>Desde una foto, un texto o un chat en el editor.</span></li><li><svg class="ico " aria-hidden="true"><use href="#s-check"/></svg><b>Flujo de aprobación</b><span>Revisar, aprobar o rechazar con evidencia y firmas a la vista.</span></li><li><svg class="ico " aria-hidden="true"><use href="#s-chart"/></svg><b>Dashboard y analítica</b><span>Envíos y cumplimiento de un vistazo.</span></li><li><svg class="ico " aria-hidden="true"><use href="#s-download"/></svg><b>Exportación a PDF y Excel</b><span>Listo para auditoría o para análisis.</span></li><li><svg class="ico " aria-hidden="true"><use href="#s-pin"/></svg><b>Control de asistencia</b><span>Con reglas configurables.</span></li><li><svg class="ico " aria-hidden="true"><use href="#s-bell"/></svg><b>Comunicaciones segmentadas</b><span>Notificaciones push a los usuarios que elijas.</span></li><li><svg class="ico " aria-hidden="true"><use href="#s-chat"/></svg><b>Chat con IA sobre tus datos</b><span>Consulta los datos del panel conversando con la IA.</span></li></ul></div>
+      <div id="p3" role="tabpanel" aria-labelledby="t3" class="panel" hidden><ul class="fx"><li><svg class="ico " aria-hidden="true"><use href="#s-users"/></svg><b>Usuarios y cargos</b><span>Altas, perfiles y permisos por persona.</span></li><li><svg class="ico " aria-hidden="true"><use href="#s-building"/></svg><b>Ubicaciones de trabajo</b><span>Obras, plantas, sedes o bodegas.</span></li><li><svg class="ico " aria-hidden="true"><use href="#s-layers"/></svg><b>Departamentos y categorías</b><span>Para ordenar formularios y reportes como tu empresa se ordena.</span></li><li><svg class="ico " aria-hidden="true"><use href="#s-edit"/></svg><b>Configuración de la organización</b><span>Los ajustes de tu empresa en un solo lugar.</span></li><li><svg class="ico " aria-hidden="true"><use href="#s-lock"/></svg><b>Datos aislados por empresa</b><span>Arquitectura multi-tenant: cada organización va por separado.</span></li><li><svg class="ico " aria-hidden="true"><use href="#s-chart"/></svg><b>Uso y cuotas</b><span>Kairos gestiona las organizaciones y controla el uso.</span></li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec alt">
+  <div class="wrap two top">
+    <div class="rv">
+      <h2 class="h2">Se conecta con <em>lo que ya usan.</em></h2>
+      <p class="lead">Los datos no se quedan atrapados en una sola herramienta: llegan a otros sistemas y a la gente indicada a tiempo.</p>
+    </div>
+    <ul class="facts  rv"><li><svg class="ico " aria-hidden="true"><use href="#s-plug"/></svg><b>Webhooks</b><span>SEÑAL avisa a tus otros sistemas cuando pasa algo, para que no dependas de exportar a mano.</span></li><li><svg class="ico " aria-hidden="true"><use href="#s-download"/></svg><b>Exportes a PDF y Excel</b><span>El registro con su evidencia, o los datos para tu análisis.</span></li></ul>
+  </div>
+</section>
+
+<section class="next"><div class="wrap"><a href="senal-campo.html"><span><b>Campo y seguridad</b><span class="d">Offline, biometría y evidencia a prueba de auditoría.</span></span><svg class="ico " aria-hidden="true"><use href="#s-arrow"/></svg></a></div></section>
+</main>
+<footer class="sf">
+  <div class="tape" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="sf-g">
+      <div>
+        <a href="senal.html" class="sn-logo"><span class="sn-mark"><svg class="ico " aria-hidden="true"><use href="#s-mark"/></svg></span>SEÑAL</a>
+        <p>Gestión operativa y seguridad laboral para quien trabaja en campo. Un producto de Kairos — DLS Group S.A.S.</p>
+      </div>
+      <div>
+        <h5>SEÑAL</h5>
+        <ul>
+          <li><a href="senal.html">Cómo funciona</a></li>
+          <li><a href="senal-juego.html">Modo Juego</a></li>
+          <li><a href="senal-ia.html">IA que digitaliza tu papel</a></li>
+          <li><a href="senal-funciones.html">Funciones por rol</a></li>
+          <li><a href="senal-campo.html">Campo y seguridad</a></li>
+          <li><a href="senal-demo.html">Demo, planes y preguntas</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contacto</h5>
+        <ul>
+          <li><a href="https://wa.me/573043660371?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20SE%C3%91AL" target="_blank" rel="noopener">WhatsApp +57 304 366 0371</a></li>
+          <li><a href="mailto:gerencia@dlskairos.com">gerencia@dlskairos.com</a></li>
+          <li><a href="index.html">Kairos</a></li>
+          <li><a href="politica-datos.html">Política de datos</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="kd"><span>© 2026 DLS GROUP SAS · Todos los derechos reservados</span><span>Hecho con orgullo en Colombia 🇨🇴</span></div>
+  </div>
+</footer>
+<a class="wa" href="https://wa.me/573043660371?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20SE%C3%91AL" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp"><svg class="ico " aria-hidden="true"><use href="#s-chat"/></svg><span>Escríbenos</span></a>
+<script src="assets/senal.js"></script>
+<script src="assets/site.js"></script>
+</body>
+</html>
