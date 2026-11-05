@@ -2,6 +2,7 @@
   var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   var $ = function (s, c) { return (c || document).querySelector(s); };
   var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
+  var t = i18n.t;
 
   /* reveal on scroll */
   var io = new IntersectionObserver(function (es) {
@@ -22,7 +23,7 @@
   var stmt = $('#stmt'), words = [];
   (function () {
     if (!stmt) return;
-    var hot = ['inteligencia', 'artificial'];
+    var hot = ['inteligencia', 'artificial', 'intelligence'];
     stmt.innerHTML = stmt.textContent.split(' ').map(function (w) {
       return '<span class="w' + (hot.indexOf(w.replace(/[.,]/g, '')) > -1 ? ' hot' : '') + '">' + w + '</span>';
     }).join(' ');
@@ -201,12 +202,12 @@
     function ping() {
       if (pinned) return;
       var i; do { i = Math.floor(Math.random() * ps.length); } while (i === last); last = i;
-      var p = ps[i]; p.classList.add('hot'); out.textContent = 'Nuevo registro · ' + p.getAttribute('data-n');
+      var p = ps[i]; p.classList.add('hot'); out.textContent = t('Nuevo registro') + ' · ' + p.getAttribute('data-n');
       setTimeout(function () { p.classList.remove('hot'); }, 1400);
     }
     ps.forEach(function (p) {
       p.addEventListener('pointerenter', function () { pinned = true; show(p); });
-      p.addEventListener('pointerleave', function () { pinned = false; out.textContent = 'Registros en tiempo real'; });
+      p.addEventListener('pointerleave', function () { pinned = false; out.textContent = t('Registros en tiempo real'); });
       p.addEventListener('click', function () { show(p); p.classList.add('hot'); setTimeout(function () { p.classList.remove('hot'); }, 900); });
     });
     if (reduce) { ps[3].classList.add('pick'); ps[9].classList.add('pick'); return; }
@@ -220,22 +221,25 @@
   (function () {
     if (!$('#chat')) return;
     var b = $('#chat-b'), timers = [], started = false;
+    var Q = t('Permiso de trabajo en alturas · Torre grúa 3 · Turno 6:00 a. m.'),
+        A = t('<b>Riesgo alto detectado.</b> La certificación de alturas del operario vence hoy. Recomiendo devolver el permiso y solicitar la renovación.'),
+        OK = '<svg class="ico"><use href="#i-check"/></svg>' + t('Permiso devuelto · Trazabilidad registrada');
     function el(c, h) { var d = document.createElement('div'); d.className = c; d.innerHTML = h; b.appendChild(d); requestAnimationFrame(function () { requestAnimationFrame(function () { d.classList.add('show'); }); }); return d; }
     function at(ms, f) { timers.push(setTimeout(f, ms)); }
     function play() {
       b.innerHTML = '';
-      el('msg u', 'Permiso de trabajo en alturas · Torre grúa 3 · Turno 6:00 a. m.');
+      el('msg u', Q);
       var ty;
       at(900, function () { ty = el('msg a', '<span class="typing"><i></i><i></i><i></i></span>'); });
-      at(2600, function () { ty.innerHTML = 'Revisando certificaciones y permisos activos…'; });
-      at(4200, function () { ty.innerHTML = '<b>Riesgo alto detectado.</b> La certificación de alturas del operario vence hoy. Recomiendo devolver el permiso y solicitar la renovación.'; });
-      var ac; at(5600, function () { ac = el('acts', '<span class="p1">Devolver permiso</span><span>Aprobar con excepción</span>'); });
+      at(2600, function () { ty.innerHTML = t('Revisando certificaciones y permisos activos…'); });
+      at(4200, function () { ty.innerHTML = A; });
+      var ac; at(5600, function () { ac = el('acts', '<span class="p1">' + t('Devolver permiso') + '</span><span>' + t('Aprobar con excepción') + '</span>'); });
       at(7000, function () { ac.firstChild.classList.add('pick'); });
-      at(7600, function () { el('done', '<svg class="ico"><use href="#i-check"/></svg>Permiso devuelto · Trazabilidad registrada'); });
+      at(7600, function () { el('done', OK); });
       at(12500, play);
     }
     function static_() {
-      b.innerHTML = '<div class="msg u show">Permiso de trabajo en alturas · Torre grúa 3 · Turno 6:00 a. m.</div><div class="msg a show"><b>Riesgo alto detectado.</b> La certificación de alturas del operario vence hoy. Recomiendo devolver el permiso y solicitar la renovación.</div><div class="done show"><svg class="ico"><use href="#i-check"/></svg>Permiso devuelto · Trazabilidad registrada</div>';
+      b.innerHTML = '<div class="msg u show">' + Q + '</div><div class="msg a show">' + A + '</div><div class="done show">' + OK + '</div>';
     }
     new IntersectionObserver(function (es) {
       if (es[0].isIntersecting) { if (!started) { started = true; reduce ? static_() : play(); } }
@@ -258,16 +262,16 @@
   var form = $('#contact-form'), btn = $('#form-btn'), msg = $('#form-msg');
   var arrow = '<svg class="ico"><use href="#i-arrow"/></svg>';
   if (form) form.addEventListener('submit', async function (e) {
-    e.preventDefault(); btn.disabled = true; btn.textContent = 'Enviando...';
+    e.preventDefault(); btn.disabled = true; btn.textContent = t('Enviando...');
     try {
       var res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
       if (!res.ok) throw new Error();
       msg.style.cssText = 'display:block;background:rgba(40,200,120,.12);border:1px solid rgba(40,200,120,.35);color:#6fe0a5';
-      msg.textContent = '✓ Mensaje enviado. Te respondemos en menos de 24 horas.'; form.reset(); window.track && window.track('formulario_enviado');
+      msg.textContent = t('✓ Mensaje enviado. Te respondemos en menos de 24 horas.'); form.reset(); window.track && window.track('formulario_enviado');
     } catch (_) {
       msg.style.cssText = 'display:block;background:rgba(255,90,90,.12);border:1px solid rgba(255,90,90,.35);color:#ff9d9d';
-      msg.textContent = 'Hubo un error. Escríbenos directamente a gerencia@kairosdls.com';
-    } finally { btn.disabled = false; btn.innerHTML = 'Enviar mensaje ' + arrow; }
+      msg.textContent = t('Hubo un error. Escríbenos directamente a gerencia@kairosdls.com');
+    } finally { btn.disabled = false; btn.innerHTML = t('Enviar mensaje') + ' ' + arrow; }
   });
 })();
 

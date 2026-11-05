@@ -2,6 +2,7 @@
 (function () {
   /* analítica: Google Analytics 4, solo con consentimiento */
   var GA_ID = 'G-VWKLH1PMMQ'; // pega aquí tu ID de medición, por ejemplo 'G-XXXXXXXXXX'
+  var t = i18n.t;
   function track(n) { if (window.gtag) gtag('event', n); }
   window.track = track;
   document.addEventListener('click', function (e) {
@@ -22,8 +23,8 @@
     }
     if (pref === 'si') { load(); return; }
     if (pref === 'no') return;
-    var b = document.createElement('div'); b.className = 'cookies'; b.setAttribute('role', 'dialog'); b.setAttribute('aria-label', 'Cookies de analítica');
-    b.innerHTML = '<p>Usamos cookies de analítica (Google Analytics) para entender cómo se usa el sitio y mejorarlo. <a href="politica-datos.html" target="_blank" rel="noopener">Más información</a></p><div><button type="button" data-v="no">Rechazar</button><button type="button" data-v="si" class="y">Aceptar</button></div>';
+    var b = document.createElement('div'); b.className = 'cookies'; b.setAttribute('role', 'dialog'); b.setAttribute('aria-label', t('Cookies de analítica'));
+    b.innerHTML = '<p>' + t('Usamos cookies de analítica (Google Analytics) para entender cómo se usa el sitio y mejorarlo.') + ' <a href="politica-datos.html" target="_blank" rel="noopener">' + t('Más información') + '</a></p><div><button type="button" data-v="no">' + t('Rechazar') + '</button><button type="button" data-v="si" class="y">' + t('Aceptar') + '</button></div>';
     document.body.appendChild(b); document.body.classList.add('cb');
     b.addEventListener('click', function (e) {
       var v = e.target.getAttribute && e.target.getAttribute('data-v'); if (!v) return;

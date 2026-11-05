@@ -4,6 +4,7 @@
   var $ = function (s, c) { return (c || document).querySelector(s); };
   var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
   var ico = function (id) { return '<svg class="ico" aria-hidden="true"><use href="#' + id + '"/></svg>'; };
+  var t = i18n.t;
 
   /* menú móvil */
   var nav = $('.sn'), tg = $('.sn-tg');
@@ -26,11 +27,11 @@
 
   /* ---------- celular: Modo Juego / Modo Lite ---------- */
   var STEPS = [
-    { t: 'Entrada marcada', m: '6:02 · ubicación registrada' },
-    { t: 'Inspección de arnés', m: 'Correas, hebillas y mosquetones', q: '¿El arnés tiene la inspección vigente?', k: 'yn' },
-    { t: 'Permiso de alturas', m: 'Punto de anclaje y plan de rescate', q: '¿Confirmas el punto de anclaje certificado?', k: 'yn' },
-    { t: 'Foto de evidencia', m: 'Con la cámara del celular', q: 'Toma una foto del punto de anclaje', k: 'photo' },
-    { t: 'Firma', m: 'Con el dedo, en la pantalla', q: 'Firma para cerrar el permiso', k: 'sign' }
+    { t: t('Entrada marcada'), m: t('6:02 · ubicación registrada') },
+    { t: t('Inspección de arnés'), m: t('Correas, hebillas y mosquetones'), q: t('¿El arnés tiene la inspección vigente?'), k: 'yn' },
+    { t: t('Permiso de alturas'), m: t('Punto de anclaje y plan de rescate'), q: t('¿Confirmas el punto de anclaje certificado?'), k: 'yn' },
+    { t: t('Foto de evidencia'), m: t('Con la cámara del celular'), q: t('Toma una foto del punto de anclaje'), k: 'photo' },
+    { t: t('Firma'), m: t('Con el dedo, en la pantalla'), q: t('Firma para cerrar el permiso'), k: 'sign' }
   ];
   var SIGN = 'M10 58c18-34 30-38 34-24s-6 30 6 28 14-34 30-34 6 30 22 28 20-22 34-22 22 16 38 10 22-20 36-18';
 
@@ -46,29 +47,29 @@
         var c = i < cur ? 'done' : i === cur ? 'cur' : 'lock';
         return '<li class="st ' + c + (i === pop ? ' pop' : '') + '"><span class="n">' + (i < cur ? ico('s-check') : i + 1) + '</span><div><b>' + s.t + '</b><em>' + s.m + '</em></div></li>';
       }).join('');
-      setScreen('', '<div class="scr-top"><small>Ruta de la jornada · ' + (cur + 1) + ' de ' + STEPS.length + '</small><b>Trabajo en alturas</b><div class="prog"><i style="--p:' + prevP + '%"></i></div></div><ol class="route">' + steps + '</ol><div class="scr-foot"><button type="button" class="sbtn" data-a="go">Continuar</button></div>');
+      setScreen('', '<div class="scr-top"><small>' + t('Ruta de la jornada · {n} de {m}', { n: cur + 1, m: STEPS.length }) + '</small><b>' + t('Trabajo en alturas') + '</b><div class="prog"><i style="--p:' + prevP + '%"></i></div></div><ol class="route">' + steps + '</ol><div class="scr-foot"><button type="button" class="sbtn" data-a="go">' + t('Continuar') + '</button></div>');
       var bar = $('.prog i', screen);
       requestAnimationFrame(function () { requestAnimationFrame(function () { bar.style.setProperty('--p', p + '%'); prevP = p; }); });
     }
 
     function renderQ() {
       var s = STEPS[cur], body;
-      if (s.k === 'photo') body = '<div class="evid" id="ev"><div class="ph">' + ico('s-cam') + 'Encuadra el punto de anclaje</div><span class="stamp">Foto · 6:14 · ubicación registrada</span></div><div class="ans"><button type="button" data-a="shot">' + ico('s-cam') + ' Tomar foto</button></div>';
-      else if (s.k === 'sign') body = '<div class="evid" id="ev"><svg class="sg" viewBox="0 0 240 80" aria-hidden="true"><path d="' + SIGN + '" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg><span class="stamp">Firmado · 6:16</span></div><div class="ans"><button type="button" data-a="sign">Firmar con el dedo</button></div>';
-      else body = '<div class="ans" style="margin-top:auto"><button type="button" data-a="ok">Sí</button><button type="button" class="alt" data-a="no">No, revisar</button></div>';
-      setScreen('', '<div class="scr-top"><small>Nivel ' + (cur + 1) + ' · ' + s.t + '</small><div class="prog"><i style="--p:' + Math.round(cur / STEPS.length * 100) + '%"></i></div></div><div class="q"><h4>' + s.q + '</h4><p>' + s.m + '</p>' + (s.k === 'yn' ? '' : '') + body + '</div>');
+      if (s.k === 'photo') body = '<div class="evid" id="ev"><div class="ph">' + ico('s-cam') + t('Encuadra el punto de anclaje') + '</div><span class="stamp">' + t('Foto · 6:14 · ubicación registrada') + '</span></div><div class="ans"><button type="button" data-a="shot">' + ico('s-cam') + ' ' + t('Tomar foto') + '</button></div>';
+      else if (s.k === 'sign') body = '<div class="evid" id="ev"><svg class="sg" viewBox="0 0 240 80" aria-hidden="true"><path d="' + SIGN + '" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg><span class="stamp">' + t('Firmado · 6:16') + '</span></div><div class="ans"><button type="button" data-a="sign">' + t('Firmar con el dedo') + '</button></div>';
+      else body = '<div class="ans" style="margin-top:auto"><button type="button" data-a="ok">' + t('Sí') + '</button><button type="button" class="alt" data-a="no">' + t('No, revisar') + '</button></div>';
+      setScreen('', '<div class="scr-top"><small>' + t('Nivel {n}', { n: cur + 1 }) + ' · ' + s.t + '</small><div class="prog"><i style="--p:' + Math.round(cur / STEPS.length * 100) + '%"></i></div></div><div class="q"><h4>' + s.q + '</h4><p>' + s.m + '</p>' + (s.k === 'yn' ? '' : '') + body + '</div>');
     }
 
     function renderFin() {
-      setScreen('', '<div class="fin"><span class="big">' + ico('s-check') + '</span><h4>Jornada lista</h4><p>Enviada a revisión del administrador.</p><ul><li>' + ico('s-sign') + 'Firma digital</li><li>' + ico('s-cam') + 'Foto de evidencia</li><li>' + ico('s-pin') + 'Ubicación y hora</li></ul></div><div class="scr-foot"><button type="button" class="sbtn" data-a="reset">Repetir demo</button></div>');
-      say('Jornada completada y enviada a revisión.');
+      setScreen('', '<div class="fin"><span class="big">' + ico('s-check') + '</span><h4>' + t('Jornada lista') + '</h4><p>' + t('Enviada a revisión del administrador.') + '</p><ul><li>' + ico('s-sign') + t('Firma digital') + '</li><li>' + ico('s-cam') + t('Foto de evidencia') + '</li><li>' + ico('s-pin') + t('Ubicación y hora') + '</li></ul></div><div class="scr-foot"><button type="button" class="sbtn" data-a="reset">' + t('Repetir demo') + '</button></div>');
+      say(t('Jornada completada y enviada a revisión.'));
     }
 
     function celebrate(done) {
-      var b = document.createElement('div'); b.className = 'burst'; b.innerHTML = '<div>' + ico('s-check') + '</div><span>Nivel ' + (cur + 1) + ' completado</span>';
+      var b = document.createElement('div'); b.className = 'burst'; b.innerHTML = '<div>' + ico('s-check') + '</div><span>' + t('Nivel {n} completado', { n: cur + 1 }) + '</span>';
       screen.appendChild(b);
       void b.offsetWidth; b.classList.add('on');
-      say('Nivel ' + (cur + 1) + ' completado.');
+      say(t('Nivel {n} completado.', { n: cur + 1 }));
       timer = setTimeout(function () { done(); }, reduce ? 50 : 850);
     }
 
@@ -78,15 +79,15 @@
     }
 
     function renderLite() {
-      var yn = function (l) { return '<div><label>' + l + '</label><div class="row"><button type="button" class="opt">Sí</button><button type="button" class="opt">No</button></div></div>'; };
-      setScreen('lt', '<div class="scr-top"><small>Modo Lite · formulario directo</small><b>Trabajo en alturas</b></div><div class="lf">' + yn('Inspección de arnés vigente') + yn('Punto de anclaje certificado') +
-        '<div><label>Foto del punto de anclaje</label><div class="inp">Adjuntar foto</div></div><div><label>Firma</label><div class="inp sg"></div></div></div><div class="scr-foot"><button type="button" class="sbtn" data-a="send">Enviar</button></div>');
+      var yn = function (l) { return '<div><label>' + l + '</label><div class="row"><button type="button" class="opt">' + t('Sí') + '</button><button type="button" class="opt">' + t('No') + '</button></div></div>'; };
+      setScreen('lt', '<div class="scr-top"><small>' + t('Modo Lite · formulario directo') + '</small><b>' + t('Trabajo en alturas') + '</b></div><div class="lf">' + yn(t('Inspección de arnés vigente')) + yn(t('Punto de anclaje certificado')) +
+        '<div><label>' + t('Foto del punto de anclaje') + '</label><div class="inp">' + t('Adjuntar foto') + '</div></div><div><label>' + t('Firma') + '</label><div class="inp sg"></div></div></div><div class="scr-foot"><button type="button" class="sbtn" data-a="send">' + t('Enviar') + '</button></div>');
     }
 
     function render() {
       clearTimeout(timer);
-      if (mode === 'lite') { renderLite(); say('Modo Lite: formulario directo.'); }
-      else { cur = 1; prevP = 20; renderMap(); say('Modo Juego: ruta de la jornada.'); }
+      if (mode === 'lite') { renderLite(); say(t('Modo Lite: formulario directo.')); }
+      else { cur = 1; prevP = 20; renderMap(); say(t('Modo Juego: ruta de la jornada.')); }
     }
 
     screen.addEventListener('click', function (e) {
@@ -96,14 +97,14 @@
       var a = b.getAttribute('data-a');
       if (a === 'go') renderQ();
       else if (a === 'ok') celebrate(advance);
-      else if (a === 'no') { b.textContent = 'Revisión pendiente: avisamos al supervisor'; b.disabled = true; setTimeout(function () { b.disabled = false; b.textContent = 'No, revisar'; }, 1800); }
+      else if (a === 'no') { b.textContent = t('Revisión pendiente: avisamos al supervisor'); b.disabled = true; setTimeout(function () { b.disabled = false; b.textContent = t('No, revisar'); }, 1800); }
       else if (a === 'shot' || a === 'sign') {
         var ev = $('#ev', screen); ev.classList.add('on'); b.disabled = true;
-        if (a === 'shot') { ev.querySelector('.ph').innerHTML = ico('s-check') + 'Foto adjunta'; }
+        if (a === 'shot') { ev.querySelector('.ph').innerHTML = ico('s-check') + t('Foto adjunta'); }
         setTimeout(function () { celebrate(advance); }, reduce ? 0 : 900);
       }
       else if (a === 'reset') render();
-      else if (a === 'send') { b.parentNode.insertAdjacentHTML('beforebegin', '<p class="ok-msg" role="status">Enviado a revisión.</p>'); b.disabled = true; b.textContent = 'Enviado'; }
+      else if (a === 'send') { b.parentNode.insertAdjacentHTML('beforebegin', '<p class="ok-msg" role="status">' + t('Enviado a revisión.') + '</p>'); b.disabled = true; b.textContent = t('Enviado'); }
     });
 
     $$('[data-set]', root).forEach(function (btn) {
@@ -161,16 +162,16 @@
   if (form) {
     var btn = $('#form-btn'), msg = $('#form-msg'), label = btn.innerHTML;
     form.addEventListener('submit', async function (e) {
-      e.preventDefault(); btn.disabled = true; btn.textContent = 'Enviando...';
+      e.preventDefault(); btn.disabled = true; btn.textContent = t('Enviando...');
       try {
         var res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
         if (!res.ok) throw new Error();
         msg.style.cssText = 'display:block;background:rgba(0,135,60,.12);border:2px solid #00873C;color:var(--ok)';
-        msg.textContent = '✓ Listo. Te escribimos en menos de 24 horas para agendar la demo.'; form.reset();
+        msg.textContent = t('✓ Listo. Te escribimos en menos de 24 horas para agendar la demo.'); form.reset();
         if (window.track) window.track('senal_demo_enviada');
       } catch (_) {
         msg.style.cssText = 'display:block;background:rgba(232,101,10,.12);border:2px solid #E8650A;color:var(--warn)';
-        msg.textContent = 'No pudimos enviarlo. Escríbenos a gerencia@kairosdls.com o por WhatsApp.';
+        msg.textContent = t('No pudimos enviarlo. Escríbenos a gerencia@kairosdls.com o por WhatsApp.');
       } finally { btn.disabled = false; btn.innerHTML = label; }
     });
   }
@@ -182,6 +183,7 @@
   var $ = function (s, c) { return (c || document).querySelector(s); };
   var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
   var ico = function (id) { return '<svg class="ico" aria-hidden="true"><use href="#' + id + '"/></svg>'; };
+  var t = i18n.t;
   var clamp = function (v, a, b) { return Math.min(b, Math.max(a, v)); };
 
   /* progreso de lectura, paralaje y cinta */
@@ -206,16 +208,16 @@
   $$('[data-focus] > li').forEach(function (li) { fio.observe(li); });
 
   /* vistas del celular de la jornada */
-  var RS = [['Entrada marcada', '6:02 · ubicación registrada'], ['Inspección de arnés', 'Correas, hebillas y mosquetones'], ['Permiso de alturas', 'Punto de anclaje y plan de rescate'], ['Foto de evidencia', 'Con la cámara del celular'], ['Firma', 'Con el dedo, en la pantalla']];
+  var RS = [[t('Entrada marcada'), t('6:02 · ubicación registrada')], [t('Inspección de arnés'), t('Correas, hebillas y mosquetones')], [t('Permiso de alturas'), t('Punto de anclaje y plan de rescate')], [t('Foto de evidencia'), t('Con la cámara del celular')], [t('Firma'), t('Con el dedo, en la pantalla')]];
   function routeView(cur, pop) {
     var rows = RS.map(function (s, i) {
       var c = i < cur ? 'done' : i === cur ? 'cur' : 'lock';
       return '<li class="st ' + c + (i === pop ? ' pop' : '') + '"><span class="n">' + (i < cur ? ico('s-check') : i + 1) + '</span><div><b>' + s[0] + '</b><em>' + s[1] + '</em></div></li>';
     }).join('');
-    return '<div class="scr-top"><small>Ruta de la jornada · ' + Math.min(cur + 1, 5) + ' de 5</small><b>Trabajo en alturas</b><div class="prog"><i style="--p:' + Math.round(cur / 5 * 100) + '%"></i></div></div><ol class="route">' + rows + '</ol><div class="scr-foot"><button type="button" class="sbtn" tabindex="-1">Continuar</button></div>';
+    return '<div class="scr-top"><small>' + t('Ruta de la jornada · {n} de {m}', { n: Math.min(cur + 1, 5), m: 5 }) + '</small><b>' + t('Trabajo en alturas') + '</b><div class="prog"><i style="--p:' + Math.round(cur / 5 * 100) + '%"></i></div></div><ol class="route">' + rows + '</ol><div class="scr-foot"><button type="button" class="sbtn" tabindex="-1">' + t('Continuar') + '</button></div>';
   }
   function finView() {
-    return '<div class="fin"><span class="big">' + ico('s-check') + '</span><h4>Jornada lista</h4><p>Enviada a revisión del administrador.</p><ul><li>' + ico('s-sign') + 'Firma digital</li><li>' + ico('s-cam') + 'Foto de evidencia</li><li>' + ico('s-pin') + 'Ubicación y hora</li></ul></div>';
+    return '<div class="fin"><span class="big">' + ico('s-check') + '</span><h4>' + t('Jornada lista') + '</h4><p>' + t('Enviada a revisión del administrador.') + '</p><ul><li>' + ico('s-sign') + t('Firma digital') + '</li><li>' + ico('s-cam') + t('Foto de evidencia') + '</li><li>' + ico('s-pin') + t('Ubicación y hora') + '</li></ul></div>';
   }
 
   var timers = [];
@@ -231,8 +233,8 @@
           screen.innerHTML = routeView(1);
           [2, 3, 4].forEach(function (c, k) { later(function () { screen.innerHTML = routeView(c, c - 1); }, reduce ? 0 : 900 * (k + 1)); });
         } else if (i === 2) {
-          chip.className = 'chip pend'; chip.textContent = 'Pendiente';
-          later(function () { chip.className = 'chip ok'; chip.textContent = 'Aprobado'; }, reduce ? 0 : 1300);
+          chip.className = 'chip pend'; chip.textContent = t('Pendiente');
+          later(function () { chip.className = 'chip ok'; chip.textContent = t('Aprobado'); }, reduce ? 0 : 1300);
         }
       }
     },
@@ -267,13 +269,13 @@
         clear();
         var chip = $('.chip[data-flip]', root);
         if (!chip) return;
-        chip.className = 'chip pend'; chip.textContent = 'Pendiente';
-        if (i >= 2) later(function () { chip.className = 'chip ok'; chip.textContent = 'Aprobado'; }, reduce ? 0 : 900);
+        chip.className = 'chip pend'; chip.textContent = t('Pendiente');
+        if (i >= 2) later(function () { chip.className = 'chip ok'; chip.textContent = t('Aprobado'); }, reduce ? 0 : 900);
       }
     },
     evidence: {
       on: function (i, root) {
-        var msgs = [['s-finger', 'Ingresa con tu huella', 'O con tu PIN.'], ['s-wifioff', 'Conexión lenta', 'Se guardan y se envían al volver la señal.'], ['s-sign', 'Firma y foto adjuntas', 'Evidencia capturada mientras se trabaja.'], ['s-pin', 'Ubicación y hora', 'Quedan registradas con el envío.'], ['s-check', 'Enviado a revisión', 'Trazable de principio a fin.']];
+        var msgs = [['s-finger', t('Ingresa con tu huella'), t('O con tu PIN.')], ['s-wifioff', t('Conexión lenta'), t('Se guardan y se envían al volver la señal.')], ['s-sign', t('Firma y foto adjuntas'), t('Evidencia capturada mientras se trabaja.')], ['s-pin', t('Ubicación y hora'), t('Quedan registradas con el envío.')], ['s-check', t('Enviado a revisión'), t('Trazable de principio a fin.')]];
         var m = msgs[i], snk = $('.snk', root);
         snk.innerHTML = ico(m[0]) + '<div class="swap"><b>' + m[1] + '</b><span>' + m[2] + '</span></div>';
       }

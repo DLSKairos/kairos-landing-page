@@ -76,6 +76,9 @@ p.m { color: var(--mut); text-wrap: pretty; }
 .sn-links a:not(.b):hover, .sn-links a[aria-current="page"] { color: var(--ink); }
 .sn-links a[aria-current="page"]:not(.b)::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 3px; border-radius: 2px; background: var(--y); }
 .sn-links .b { height: 46px; padding: 0 20px; font-size: 1.05rem; border-radius: 12px; }
+.lang { display: inline-flex; padding: 3px; border: 2px solid var(--hair); border-radius: 12px; }
+.lang button { min-width: 40px; height: 34px; padding: 0 8px; border: 0; border-radius: 8px; background: none; color: var(--mut); font: 700 .9rem/1 var(--body); letter-spacing: .06em; cursor: pointer; }
+.lang button:hover { color: var(--ink); } .lang button[aria-pressed="true"] { background: var(--y); color: var(--on-y); }
 .sn-tg { display: none; width: 48px; height: 48px; margin-right: -10px; background: none; border: 0; cursor: pointer; flex-direction: column; align-items: center; justify-content: center; gap: 6px; }
 .sn-tg span { display: block; width: 24px; height: 3px; border-radius: 2px; background: var(--ink); transition: transform .35s var(--ease); }
 .sn.open .sn-tg span:first-child { transform: translateY(4.5px) rotate(45deg); }
@@ -366,6 +369,7 @@ body.cb .wa { bottom: 150px; }
   .sn-links a:not(.b) { font-size: 1.2rem; padding: 16px 0; border-bottom: 2px solid var(--hair-s); }
   .sn-links a[aria-current="page"]:not(.b)::after { display: none; }
   .sn-links .b { margin-top: 18px; height: 56px; }
+  .lang { align-self: flex-start; margin-top: 20px; } .lang button { height: 44px; min-width: 52px; font-size: 1rem; }
   .hero-g, .two, .pain-g, .sf-g { grid-template-columns: 1fr; }
   .duo .phone-w + .phone-w { display: none; } .duo .phone-w:first-child { width: 100%; margin: 0; transform: none; }
   .pain-g .h2 { position: static; }

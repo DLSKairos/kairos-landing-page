@@ -550,6 +550,9 @@ nav .logo-a { display: flex; align-items: center; }
 .nav-links .nav-senal { display: inline-flex; align-items: center; gap: 8px; color: #FFC400; }
 .nav-links .nav-senal::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #FFC400; box-shadow: 0 0 0 0 rgba(255,196,0,.5); animation: nsp 2.4s ease-out infinite; }
 .nav-links .nav-senal:hover { color: #fff; }
+.lang { display: inline-flex; padding: 2px; border: 1px solid var(--hair-d); border-radius: 999px; }
+.lang button { padding: 5px 9px; border: 0; border-radius: 999px; background: none; color: rgba(255,255,255,.55); font: 600 .6875rem/1 var(--text); letter-spacing: .06em; cursor: pointer; transition: color .2s, background .2s; }
+.lang button:hover { color: #fff; } .lang button[aria-pressed="true"] { background: rgba(255,255,255,.16); color: #fff; }
 @keyframes nsp { 0% { box-shadow: 0 0 0 0 rgba(255,196,0,.55); } 70%, 100% { box-shadow: 0 0 0 8px rgba(255,196,0,0); } }
 .nav-tg { display: none; width: 44px; height: 44px; margin-right: -10px; background: none; border: 0; cursor: pointer; align-items: center; justify-content: center; flex-direction: column; gap: 6px; }
 .nav-tg span { display: block; width: 20px; height: 1.5px; background: #fff; transition: transform .35s var(--ease), opacity .2s; }
@@ -602,5 +605,6 @@ main { display: block; }
   nav.open .nav-links { display: flex; }
   .nav-links a:not(.nav-cta) { display: flex; padding: 15px 0; font-size: 1.0625rem; border-bottom: 1px solid var(--hair-d); }
   .nav-links .nav-cta { margin-top: 16px; text-align: center; padding: 15px 18px; font-size: 1rem; }
+  .lang { align-self: flex-start; margin-top: 18px; } .lang button { padding: 11px 18px; font-size: .8125rem; }
   .idx a.sg { padding-left: 20px; padding-right: 20px; }
 }
