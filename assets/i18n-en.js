@@ -354,9 +354,6 @@ window.I18N_EN = {
 "La Ruta de la jornada: cada inspección es una estación. Verde, hecha. Amarillo, la siguiente.": "The Shift Route: every inspection is a station. Green, done. Yellow, the next one.",
 "Clientes y cifras": "Clients and figures",
 "Clientes y pilotos": "Clients and pilots",
-"[COMPLETAR] logos": "[TO COMPLETE] logos",
-"Cifras reales": "Real figures",
-"[COMPLETAR] métricas": "[TO COMPLETE] metrics",
 "Pensada para quien <em>trabaja en obra.</em>": "Built for people who <em>work on site.</em>",
 "Una app de gestión operativa y seguridad laboral que se lee a pleno sol, se toca con guantes y, con la sesión iniciada, sigue funcionando sin señal.": "An operations management and workplace safety app that reads in full sun, works with gloves on and, once signed in, keeps running without signal.",
 "El obrero": "The worker",
@@ -779,4 +776,7 @@ window.I18N_EN = {
 "Quedan registradas con el envío.": "They're recorded with the submission.",
 "Enviado a revisión": "Sent for review",
 "Trazable de principio a fin.": "Traceable from start to finish."
+,"Abriendo pilotos: sé de los primeros en usar SEÑAL": "Opening pilots: be among the first to use SEÑAL"
+,"SEÑAL en cifras": "SEÑAL in numbers"
+,"11 tipos de campo · 5 estaciones por jornada · respuesta en menos de 24 h": "11 field types · 5 stations per shift · reply in under 24 h"
 };
